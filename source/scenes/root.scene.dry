@@ -1,5 +1,8 @@
 title: Root Scene
 new-page: true
+go-to: start_menu
+
+@start_menu
 
 = Dijkstra Dry
 
