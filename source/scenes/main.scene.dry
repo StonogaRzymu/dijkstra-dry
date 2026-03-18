@@ -1,6 +1,8 @@
 title: Main
 new-page: true
 
+@main
+
 = 1273
 
 Hello world
