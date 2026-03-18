@@ -16,7 +16,11 @@
     // Add your custom code here.
   };
 
+<<<<<<< HEAD
   var TITLE = "" + '_' + "";
+=======
+  var TITLE = "Dijkstra Dry" + '_' + "StonogaRzymu";
+>>>>>>> 8c3c6df3f2a53fe9772178d060d4316611481271
 
   window.quickSave = function() {
       var saveString = JSON.stringify(window.dendryUI.dendryEngine.getExportableState());

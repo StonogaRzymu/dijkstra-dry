@@ -1,25 +1,34 @@
 title: Root Scene
 new-page: true
+go-to: start_menu
+
+@start_menu
 
 = Dijkstra Dry
 
 Choose scenario:
 
-- @dijsktra_start: Build uniterd North as Dijkstra, who killed Radovid, took over Redania and won the war
+- @dijkstra_start: Build uniterd North as Dijkstra, who killed Radovid, took over Redania and won the war
 - @radovid_start: Consolidate your power as tyrannical Radovid V, who survived the war and subdued his neighbours
-- @nilfgaard_start: Stay loyal to the Emperor or fight for independence 
+- @nilfgaard_start: Stay loyal to the Emperor or fight for independence after Nilfgaard conquered most of the North
 
-@dijsktra_start
+@dijkstra_start
 subtitle: -1 resources
 
-Dijkstra był super i chuj
+= Dijkstra was awesome
+
+- @root: Back
 
 @radovid_start
 subtitle: -1 resources
 
-Dijkstra był super i chuj
+= Radovid was awesome
+
+- @root: Back
 
 @nilfgaard_start
 subtitle: -1 resources
 
-Dijkstra był super i chuj
+= Nilfgaard was awesome
+
+- @root: Back
