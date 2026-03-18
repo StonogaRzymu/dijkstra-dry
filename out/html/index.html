@@ -4,13 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta prefix="ifiction: http://babel.ifarchive.org/protocol/iFiction/"
-        property="ifiction:ifid" content="7FCDF039-2B77-4179-B795-CBAFA65253AA">
-    <title>Social Democracy: An Alternate History - Autumn Chen</title>
+        property="ifiction:ifid" content="">
+    <title> - </title>
     <link rel="stylesheet" type="text/css" href="game.css">
     <script src="jquery-1.11.1.min.js"></script>
-    <script src="d3.v7.min.js"></script>
-    <script src="d3-parliament.js"></script>
-    <script src="d3-linegraph.js"></script>
     <script src="core.js"></script>
     <script src="game.js"></script>
   </head>
@@ -21,21 +18,32 @@
     <div class="background" id="bg1">
     </div>
 
-    <div id="options" class="overlay options" style="display: none;">
+    <header>
+      <h1></h1>
+      <h2>Stonoga</h2>
+
+      <div id="header-links">
+        <!--<a id="stats-link" onclick="window.showStats();" href="#">Status</a>-->
+        <a onclick="window.showSaveSlots();" href="#">Save/Load</a>
+        <a onclick="window.showOptions();" href="#">Options</a>
+      </div>
+
+    </header>
+
+    <div id="options" class="overlay" style="display: none;">
         <div class="overlay_top">
             <table>
                 <tr>
                     <td>
-                        Backgrounds:
-                    </td>
-                    <td>
-                        <label for="backgrounds_yes">On</label>
+                        <label for="backgrounds_yes">Enable backgrounds</label>
                     </td>
                     <td>
                         <input type="radio" id="backgrounds_yes" name="backgrounds" value="1" onclick="window.enableBg();">
                     </td>
+                </tr>
+                <tr>
                     <td>
-                        <label for="backgrounds_no">Off</label>
+                        <label for="backgrounds_no">Disable backgrounds</label>
                     </td>
                     <td>
                         <input type="radio" id="backgrounds_no" name="backgrounds" value="0" onclick="window.disableBg();">
@@ -46,36 +54,15 @@
                 </tr>
                 <tr>
                     <td>
-                        Event images:
-                    <td>
-                        <label for="images_yes">On</label>
-                    </td>
-                    <td>
-                        <input type="radio" id="images_yes" name="images" value="1" onclick="window.enableImages();">
-                    </td>
-                    <td>
-                        <label for="images_no">Off</label>
-                    </td>
-                    <td>
-                        <input type="radio" id="images_no" name="images" value="0" onclick="window.disableImages();">
-                    </td>
-                </tr>
-                <tr>
-                    <td> <hr> </td>
-                </tr>
- 
-                <tr>
-                    <td>
-                        Animations:
-                    </td>
-                    <td>
-                        <label for="animate_yes">On</label>
+                        <label for="animate_yes">Enable animation</label>
                     </td>
                     <td>
                         <input type="radio" id="animate_yes" name="animate" value="1" onclick="window.enableAnimate();">
                     </td>
+                </tr>
+                <tr>
                     <td>
-                        <label for="animate_no">Off</label>
+                        <label for="animate_no">Disable animation</label>
                     </td>
                     <td>
                         <input type="radio" id="animate_no" name="animate" value="0" onclick="window.disableAnimate();">
@@ -86,60 +73,31 @@
                 </tr>
                 <tr>
                     <td>
-                        Music:
+                        <label for="animate_bg_yes">Enable background animation</label>
                     </td>
                     <td>
-                        <label for="audio_yes">On</label>
-                    </td>
-                    <td>
-                        <input type="radio" id="audio_yes" name="audio" value="1" onclick="window.enableAudio();">
-                    </td>
-                    <td>
-                        <label for="audio_no">Off</label>
-                    </td>
-                    <td>
-                        <input type="radio" id="audio_no" name="audio" value="0" onclick="window.disableAudio();">
+                        <input type="radio" id="animate_bg_yes" name="animate_bg" value="1" onclick="window.enableAnimateBg();">
                     </td>
                 </tr>
                 <tr>
-                    <td> <hr> </td>
-                </tr>
-                <tr>
                     <td>
-                        Color scheme:
+                        <label for="animate_bg_no">Disable background animation</label>
                     </td>
                     <td>
-                        <label for="light_mode">Light mode</label>
-                    </td>
-                    <td>
-                        <input type="radio" id="light_mode" name="ld_mode" value="1" onclick="window.enableLightMode();">
-                    </td>
-                    <td>
-                        <label for="dark_mode">Dark mode</label>
-                    </td>
-                    <td>
-                        <input type="radio" id="dark_mode" name="ld_mode" value="0" onclick="window.enableDarkMode();">
+                        <input type="radio" id="animate_bg_no" name="animate_bg" value="0" onclick="window.disableAnimateBg();">
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <button onclick="window.hideOptions();">Close</button>
                     </td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                   <td>
-                        <button onclick="window.showMods();">Mods</button>
-                    </td>
-
                 </tr>
             </table>
         </div>
     </div>
 
-    <div id="save" class="overlay saves" style="display: none;">
-        <table id="saves_table" class="overlay_top">
+    <div id="save" style="display: none;">
+        <table id="saves_table">
             <tr>
                 <td>Auto-0</td>
                 <td>
@@ -149,9 +107,6 @@
                     <button class="b delete_button" id="delete_button_a0">Delete</button>
                 </td>
                 <td class="save_info" id="save_info_a0"></td>
-                <td>
-                    <button class="b export_button" id="export_button_a0">Export</button>
-                </td>
             </tr>
             <tr>
                 <td>Auto-1</td>
@@ -162,9 +117,6 @@
                     <button class="b delete_button" id="delete_button_a1">Delete</button>
                 </td>
                 <td class="save_info" id="save_info_a1"></td>
-                <td>
-                    <button class="b export_button" id="export_button_a1">Export</button>
-                </td>
             </tr>
             
             <tr>
@@ -176,9 +128,6 @@
                     <button class="b delete_button" id="delete_button_0">Delete</button>
                 </td>
                 <td class="save_info" id="save_info_0"></td>
-                <td>
-                    <button class="b export_button" id="export_button_0">Export</button>
-                </td>
             </tr>
             <tr>
                 <td>1</td>
@@ -189,9 +138,6 @@
                     <button class="b delete_button" id="delete_button_1">Delete</button>
                 </td>
                 <td class="save_info" id="save_info_1"></td>
-                <td>
-                    <button class="b export_button" id="export_button_1">Export</button>
-                </td>
             </tr>
             <tr>
                 <td>2</td>
@@ -202,9 +148,6 @@
                     <button class="b delete_button" id="delete_button_2">Delete</button>
                 </td>
                 <td class="save_info" id="save_info_2"></td>
-                <td>
-                    <button class="b export_button" id="export_button_2">Export</button>
-                </td>
             </tr>
             <tr>
                 <td>3</td>
@@ -215,9 +158,6 @@
                     <button class="b delete_button" id="delete_button_3">Delete</button>
                 </td>
                 <td class="save_info" id="save_info_3"></td>
-                <td>
-                    <button class="b export_button" id="export_button_3">Export</button>
-                </td>
             </tr>
             <tr>
                 <td>4</td>
@@ -228,9 +168,6 @@
                     <button class="b delete_button" id="delete_button_4">Delete</button>
                 </td>
                 <td class="save_info" id="save_info_4"></td>
-                <td>
-                    <button class="b export_button" id="export_button_4">Export</button>
-                </td>
             </tr>
             <tr>
                 <td>5</td>
@@ -241,9 +178,6 @@
                     <button class="b delete_button" id="delete_button_5">Delete</button>
                 </td>
                 <td class="save_info" id="save_info_5"></td>
-                <td>
-                    <button class="b export_button" id="export_button_5">Export</button>
-                </td>
             </tr>
             <tr>
                 <td>6</td>
@@ -254,9 +188,6 @@
                     <button class="b delete_button" id="delete_button_6">Delete</button>
                 </td>
                 <td class="save_info" id="save_info_6"></td>
-                <td>
-                    <button class="b export_button" id="export_button_6">Export</button>
-                </td>
             </tr>
             <tr>
                 <td>7</td>
@@ -267,18 +198,10 @@
                     <button class="b delete_button" id="delete_button_7">Delete</button>
                 </td>
                 <td class="save_info" id="save_info_7"></td>
-                <td>
-                    <button class="b export_button" id="export_button_7">Export</button>
-                </td>
             </tr>
             <tr>
-                <td colspan="5">
-                    <label for="import_save">Import save file:</label> <input type="file" id="import_save" onchange="dendryUI.importSave('import_save');"></input>
-                </td>
-            </tr> 
-            <tr>
                 <td>
-                    <button onclick="dendryUI.hideSaveSlots();">Close</button>
+                    <button onclick="window.hideSaveSlots();">Close</button>
                 </td>
             </tr>
         </table>
@@ -293,36 +216,9 @@
         <div class="sprite" id="bottomRightSprite"></div>
     </div>
 
-    <div id='page'>
-        <div id="mid_panel">
-            <header>
-                <h1 id="game-title">Dijkstra Dry</h1>
-                <h2 id="game-author">StonogaRzymu</h2>
+    <div id='content'></div>
 
-                <div id="header-links">
-                    <a id="stats-link" onclick="window.showStats();" href="#">Library</a>
-                    <a onclick="dendryUI.showSaveSlots();" href="#">Save/Load</a>
-                    <a onclick="window.showOptions();" href="#">Options</a>
-                </div>
-            </header>
-            <div id="tools_wrapper">
-                <div id='stats_sidebar' class='tools left'>
-                    <div class="tab_container">
-                        <button class="tab_button active" id="main_tab" onclick="window.changeTab('status', 'main_tab');">Main</button>
-                        <button class="tab_button" id="politics_tab" onclick="window.changeTab('status.politics', 'politics_tab');">Politics</button>
-                        <button class="tab_button" id="paramilitary_tab" onclick="window.changeTab('status.paramilitaries', 'paramilitary_tab');">Defense</button>
-                        <button class="tab_button" id="poll_tab" onclick="window.changeTab('status.polls', 'poll_tab');">Polls</button>
-                    </div>
-                    <div id="qualities">
-                    </div>
-                </div>
-            </div>
-
-            <div id='content'>
-
-            </div>
-
-            <footer>
+    <footer>
       <!--
       <p>
         <a onclick="window.showSaveSlots();" href="#">Save/Load</a>
@@ -333,8 +229,6 @@
       &copy; 2021 Autumn Chen.
       Made with <a href="https://github.com/aucchen/dendry">Dendry</a>.
       -->
-            </footer>
-        </div>
-    </div>
+    </footer>
   </body>
 </html>
