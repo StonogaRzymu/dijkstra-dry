@@ -1,6 +1,9 @@
-title: Root Scene
+title: Dijkstra Dry
 new-page: true
-go-to: start_menu_1
+
+- @start_menu_1: Start new game
+- @credits: Credits
+- @achievements: Achievements
 
 @start_menu_1
 
