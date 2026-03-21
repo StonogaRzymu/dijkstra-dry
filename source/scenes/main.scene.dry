@@ -3,7 +3,7 @@ new-page: true
 is-hand: true
 max-cards: 3
 
-= [+ month : month +] of [+ year +]
+= [+ season : season +] of [+ year +]
 
 Hello world
 
