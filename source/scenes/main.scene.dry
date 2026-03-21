@@ -29,6 +29,5 @@ is-deck: true
 @end_turn
 title: End Turn
 card-image: img/novigrad.jpg
-on-arrival: time += 1; year += if season >= 4; season += 1 if season < 4; season = 1 if season >= 4
 is-pinned-card: true
 go-to: main
