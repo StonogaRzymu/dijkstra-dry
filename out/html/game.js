@@ -248,6 +248,19 @@
   };
 
 
+  // This function updates the game sidebar.
+  window.updateSidebar = function() {
+      $('#qualities').empty();
+      var scene = dendryUI.game.scenes.status;
+      var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
+      $('#qualities').append(dendryUI.contentToHTML.convert(displayContent));
+  };
+  
+  // This function runs on every new content display. Currently, all it does is update the sidebar.
+  window.onDisplayContent = function() {
+      window.updateSidebar();
+  };
+
   window.dendryModifyUI = main;
   console.log("Modifying stats: see dendryUI.dendryEngine.state.qualities");
 
