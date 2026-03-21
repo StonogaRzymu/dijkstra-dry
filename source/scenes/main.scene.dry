@@ -30,11 +30,11 @@ card-image: img/novigrad.jpg
 is-pinned-card: true
 on-arrival: {!
 Q.time += 1;
-if (Q.season < 4)
-    season += 1
-else {
-    season = 1
-    year += 1
+if (Q.season < 4) {
+    season += 1;
+} else {
+    season = 1;
+    year += 1;
     }
 !}
 go-to: main
