@@ -1,0 +1,21 @@
+title: Nilfgaardian Envoy
+new-page: true
+is-card: true
+tags: foreign_affairs
+
+= Envoy from the Empire of Nilfgaard
+
+Nilfgaardian delegation have arrived to Tretogor and asks for an audience with Royal Regent.
+
+- @reject_demands: Reject those outrageous demands
+- @try_compromise: There surely is some compromise to be found?
+- @concede: We have to concede to their demands
+
+@reject_demands
+go-to: main
+
+@try_compromise
+go-to: main
+
+@concede
+go-to: main

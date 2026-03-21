@@ -1,0 +1,25 @@
+title: Racial Unrest
+new-page: true
+is-card: true
+tags: internal_affairs
+
+= Racial Unrest
+
+The people are reasonably upset by the recent developments, but decided to blame it on non-humans and mages
+
+- @stop_riots: Use our forces to intervene and stop the riots!
+- @allow_moderate_riots: The people need to vent their anger somehow. As long as they don't kill anyone we will allow it
+- @allow_all_riots: There is nothing we can do
+- @encourage_riots: Redania is and will remain a human kingdom, even without Radovid
+
+@stop_riots
+go-to: main
+
+@allow_moderate_riots
+go-to: main
+
+@allow_moderate_riots
+go-to: main
+
+@encourage_riots
+go-to: main
