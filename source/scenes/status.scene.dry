@@ -18,30 +18,66 @@ Dijktra's intelligence: [+ intel +]
 
 Aristocracy:
 
+<div class="sidebar-stat">
 Infuence:     [+ aristocracy_inf : inf +]
 
 Satisfaction: [+ aristocracy_sat : sat +]
+</div>
 
 Petty Nobility:
 
+<div class="sidebar-stat">
 Infuence:     [+ petty_nobility_inf : inf +]
 
 Satisfaction: [+ petty_nobility_sat : sat +]
+</div>
 
 Church of the Eternal Fire:
 
+<div class="sidebar-stat">
 Infuence:     [+ church_inf : inf +]
 
 Satisfaction: [+ church_sat : sat +]
+</div>
 
 Guilds and Bourgeoisie:
 
+<div class="sidebar-stat">
 Infuence:     [+ guilds_inf : inf +]
 
 Satisfaction: [+ guilds_sat : sat +]
+</div>
 
 Peasants:
 
+<div class="sidebar-stat">
 Infuence:     [+ peasants_inf : inf +]
 
 Satisfaction: [+ peasants_sat : sat +]
+</div>
+
+= Provinces
+
+Lower Redania
+
+Crown control: [+ low_red_cont: control +],
+
+Governor: [+ low_red_gov +] ([+ low_red_gov_allegiance +])
+
+Coast of Praxeda
+
+Crown control: [+ coast_cont: control +]
+
+Governor: [+ coast_gov +] ([+ coast_gov_allegiance +])
+
+Tridam Marshes
+
+Crown control: [+ tridam_cont: control +]
+
+Governor: [+ tridam_gov +] ([+ tridam_gov_allegiance +])
+
+Ghelibol
+
+Crown control: [+ gelibol_cont: control +]
+
+Governor: [+ gelibol_gov +] ([+ gelibol_gov_allegiance +])
