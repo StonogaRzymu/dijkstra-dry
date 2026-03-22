@@ -22,10 +22,10 @@ Aristocracy:
 Petty Nobility:
 [+ petty_nobility_inf : inf +]
 [+ petty_nobility_sat : sat +]
-Church:
+Church of the Eternal Fire:
 [+ church_inf : inf +]
 [+ church_sat : sat +]
-Guilds:
+Guilds and Bourgeoisie:
 [+ guilds_inf : inf +]
 [+ guilds_sat : sat +]
 Peasants:
