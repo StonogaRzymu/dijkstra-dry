@@ -8,4 +8,9 @@ new-page: true
 
 Dijkstra is Royal Regent and Chancellor of Redania, *de facto* highest authority in the Kingdom
 
-- @main: Return to main
+- @fiscal_policy: Fiscal policy
+- @agriculture: Grain supply
+- @economy: Economy and trade
+- @security: Internal security
+- @armed_forces: Armed forces
+- @diplomacy: Diplomacy
