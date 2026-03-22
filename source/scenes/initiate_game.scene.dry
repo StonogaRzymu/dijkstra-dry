@@ -39,5 +39,6 @@ Q.upp_red_gov_allegiance = "Aristocracy"
 Q.coast_gov_allegiance   = "Guilds"
 Q.tridam_gov_allegiance  = "Aristocracy"
 Q.gelibol_gov_allegiance = "Aristocracy"
+
 !}
 go-to: main

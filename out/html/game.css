@@ -133,10 +133,14 @@ p.game-over {
   border-radius: 4px;
   color: #999;
 }
-.sidebar-stat {
-  margin-top: -1em;
+.sidebar-stat p {
   margin-bottom: 0em;
   font-size: small;
+}
+
+.sidebar-stat strong {
+  margin-top: 1em;
+  font-size: normal;
 }
 
 ul.choices {
