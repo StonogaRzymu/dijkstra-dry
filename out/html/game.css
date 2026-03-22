@@ -133,7 +133,7 @@ p.game-over {
   border-radius: 4px;
   color: #999;
 }
-.sidebar-stat p {
+.sidebar-stat {
   margin-top: -1em;
   margin-bottom: 0em;
   font-size: small;
