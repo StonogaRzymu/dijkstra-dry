@@ -258,10 +258,9 @@
       window.updateSidebar();
   };
 
-  // This function updates the game sidebar.
-  window.updateSidebar = function() {
+    window.updateSidebar = function() {
       $('#qualities').empty();
-      var scene = dendryUI.game.scenes.status;
+      var scene = dendryUI.game.scenes[window.statusTab];
       var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
       $('#qualities').append(dendryUI.contentToHTML.convert(displayContent));
   };
