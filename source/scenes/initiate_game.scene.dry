@@ -19,7 +19,8 @@ Q.peasants_sat       = 50;
 
 Q.budget = 100;
 Q.admin_cap = 100;
-
+Q.army = 50;
+Q.intel = 50;
 
 !}
 go-to: main
