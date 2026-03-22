@@ -271,6 +271,7 @@
   };
 
   window.dendryModifyUI = main;
+  window.statusTab = "status";
   console.log("Modifying stats: see dendryUI.dendryEngine.state.qualities");
 
   window.onload = function() {

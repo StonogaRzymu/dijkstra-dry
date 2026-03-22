@@ -22,5 +22,22 @@ Q.admin_cap = 100;
 Q.army = 50;
 Q.intel = 50;
 
+Q.low_red_cont = 50
+Q.upp_red_cont = 35
+Q.coast_cont   = 30
+Q.tridam_cont  = 20
+Q.gelibol_cont = 5
+
+Q.low_red_gov = "Adam"
+Q.upp_red_gov = "Bertie"
+Q.coast_gov   = "Charlie"
+Q.tridam_gov  = "Denis"
+Q.gelibol_gov = "Edmund"
+
+Q.low_red_gov_allegiance = "Chancellor"
+Q.upp_red_gov_allegiance = "Aristocracy"
+Q.coast_gov_allegiance   = "Guilds"
+Q.tridam_gov_allegiance  = "Aristocracy"
+Q.gelibol_gov_allegiance = "Aristocracy"
 !}
 go-to: main

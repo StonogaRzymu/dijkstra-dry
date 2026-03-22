@@ -1,0 +1,6 @@
+
+(0..10) nominal
+(10..25) weak
+(25..40) moderate
+(40..60) strong
+(60..) absolute

@@ -17,17 +17,31 @@ Dijktra's intelligence: [+ intel +]
 = Redanian Estates
 
 Aristocracy:
-[+ aristocracy_inf : inf +]
-[+ aristocracy_sat : sat +]
+
+Infuence:     [+ aristocracy_inf : inf +]
+
+Satisfaction: [+ aristocracy_sat : sat +]
+
 Petty Nobility:
-[+ petty_nobility_inf : inf +]
-[+ petty_nobility_sat : sat +]
+
+Infuence:     [+ petty_nobility_inf : inf +]
+
+Satisfaction: [+ petty_nobility_sat : sat +]
+
 Church of the Eternal Fire:
-[+ church_inf : inf +]
-[+ church_sat : sat +]
+
+Infuence:     [+ church_inf : inf +]
+
+Satisfaction: [+ church_sat : sat +]
+
 Guilds and Bourgeoisie:
-[+ guilds_inf : inf +]
-[+ guilds_sat : sat +]
+
+Infuence:     [+ guilds_inf : inf +]
+
+Satisfaction: [+ guilds_sat : sat +]
+
 Peasants:
-[+ peasants_inf : inf +]
-[+ peasants_sat : sat +]
+
+Infuence:     [+ peasants_inf : inf +]
+
+Satisfaction: [+ peasants_sat : sat +]
