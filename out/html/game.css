@@ -64,7 +64,6 @@ footer a {
 }
 header {
   text-align: right;
-  height: 125px;
 }
 #header-links  {
   text-align: left;
@@ -140,7 +139,7 @@ p.game-over {
 
 .sidebar-stat strong {
   margin-top: 1em;
-  font-size: normal;
+  font-size: large;
 }
 
 ul.choices {

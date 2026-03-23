@@ -34,7 +34,7 @@ Q.coast_gov   = "Charlie"
 Q.tridam_gov  = "Denis"
 Q.gelibol_gov = "Edmund"
 
-Q.low_red_gov_allegiance = "Chancellor"
+Q.low_red_gov_allegiance = "Chancellor's Party"
 Q.upp_red_gov_allegiance = "Aristocracy"
 Q.coast_gov_allegiance   = "Guilds"
 Q.tridam_gov_allegiance  = "Aristocracy"
