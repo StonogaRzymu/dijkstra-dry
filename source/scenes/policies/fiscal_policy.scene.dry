@@ -25,9 +25,9 @@ Current tolls:
 
 [? if toll_novigrad == 1 : – Toll on Pontar river in Novigrad: [+ toll_novigrad_rev +] thousand crowns ?]
 
-[? if toll_blaviken == 1 : – Toll on Buina river in Blaviken: [+ toll_novigrad_rev +] thousand crowns ?]
+[? if toll_blaviken == 1 : – Toll on Buina river in Blaviken: [+ toll_blaviken_rev +] thousand crowns ?]
 
-[? if toll_vartburg == 1 : – Toll on Braa river in Vartburg: [+ toll_novigrad_rev +] thousand crowns ?]
+[? if toll_vartburg == 1 : – Toll on Braa river in Vartburg: [+ toll_vartburg_rev +] thousand crowns ?]
 
 [? if road_tolls == 1 : – Tolls on various royal roads and bridges in the country: [+ road_toll_rev +] thousand crowns ?]
 
