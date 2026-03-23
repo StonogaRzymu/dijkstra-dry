@@ -242,7 +242,7 @@
   // This function runs on a new page. Right now, this auto-saves.
   window.onNewPage = function() {
     var scene = window.dendryUI.dendryEngine.state.sceneId;
-    if (scene == 'main') {
+    if (scene == 'end_turn') {
         window.autosave();
     }
   };

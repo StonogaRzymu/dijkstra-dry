@@ -1,9 +1,9 @@
 Title: Initiate game
 on-arrival: {!
 
-Q.time = 1;
-Q.year = 1273;
-Q.season = 1;
+Q.time = 0;
+Q.year = 1272;
+Q.season = 4;
 
 Q.aristocracy_inf    = 40;
 Q.petty_nobility_inf = 30;
@@ -117,23 +117,5 @@ Q.buina_trade  =  300
 Q.braa_trade   =  500
 Q.land_trade   =  800
 
-// assign starting values to income vars
-// to-do: they have to be update in end_turn
-// to-do: split revenue calculation between provinces, taking control into consideration
-// to-do: house and consumption taxes
-
-Q.tax_vassals_rev    = Q.tax_vassals_rate * ( Q.country_pop + Q.country_land ) / 200 * Q.tax_vassals_eff
-Q.tax_cities_rev     = Q.tax_cities_rate * Q.country_wealth / 100 * Q.tax_cities_eff
-Q.tax_poll_rev       = Q.tax_poll_rate * Q.country_pop / 100 * Q.tax_poll_eff
-Q.tax_land_rev       = Q.tax_land_rate * Q.country_land / 100 * Q.tax_land_eff
-Q.tax_consum_rev     = Q.tax_consum_rate * Q.country_wealth / 100 * Q.tax_consum_eff
-Q.tax_houses_rev     = Q.tax_houses_rate * Q.country_wealth / 100 * Q.tax_houses_eff
-Q.tax_income_rev     = Q.tax_income_rate * Q.country_pop / 100 * Q.tax_income_eff
-Q.tax_tithe_rev      = Q.tax_tithe_rate * Q.country_land / 100 * Q.tax_tithe_eff
-Q.toll_novigrad_rev  = Q.toll_novigrad_rate * Q.pontar_trade / 100 * Q.toll_novigrad.eff
-Q.toll_blaviken_rev  = Q.toll_blaviken_rate * Q.buina_trade / 100 * Q.toll_blaviken.eff
-Q.toll_vartburg_rev  = Q.toll_vartburg_rate * Q.braa_trade / 100 * Q.toll_vartburg.eff
-Q.road_tolls_rev     = Q.road_tolls_rate * Q.land_trade / 100 * Q.road_tolls.eff
-
 !}
-go-to: main
+go-to: end_turn
