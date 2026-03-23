@@ -3,32 +3,21 @@ new-page: true
 
 = Fiscal policy
 
-Current taxes:
-
-[? if tax_vassals == 1 : – Feudal duties, paid by nobles owning lands as vassals: [+ tax_vassals_rev +]&nbsp;thousand crowns ?]
-
-[? if tax_cities == 1 : – City duties, paid by towns and cities which are direct subjects of the Crown: [+ tax_cities_rev +]&nbsp;thousand crowns ?]
-
-[? if tax_poll == 1 : – Poll tax: [+ tax_poll_rev +]&nbsp;thousand crowns ?]
-
-[? if tax_land == 1 : – Land tax: [+ tax_land_rev +]&nbsp;thousand crowns ?]
-
-[? if tax_houses == 1 : – Window tax: [+ tax_houses_rev +]&nbsp;thousand crowns ?]
-
-[? if tax_consum == 1 : – Luxury goods taxes: [+ tax_consum_rev +]&nbsp;thousand crowns ?]
-
-[? if tax_income == 1 : – Income tax: [+ tax_income_rev +]&nbsp;thousand crowns ?]
-
-[? if tax_tithe == 1 : – Royal tithe, collected by the clergy along the tithe <em>proper</em>: [+ tax_tithe_rev +]&nbsp;thousand crowns ?]
-
-Current tolls:
-
-[? if toll_novigrad == 1 : – Toll on Pontar river in Novigrad: [+ toll_novigrad_rev +]&nbsp;thousand crowns ?]
-
-[? if toll_blaviken == 1 : – Toll on Buina river in Blaviken: [+ toll_blaviken_rev +]&nbsp;thousand crowns ?]
-
-[? if toll_vartburg == 1 : – Toll on Braa river in Vartburg: [+ toll_vartburg_rev +]&nbsp;thousand crowns ?]
-
-[? if road_tolls == 1 : – Tolls on various royal roads and bridges in the country: [+ road_toll_rev +]&nbsp;thousand crowns ?]
+<table>
+<tr><th>Current taxes:</th></tr>
+[? if tax_vassals == 1 : <tr><td> Feudal duties, paid by nobles owning lands as vassals</td><td> [+ tax_vassals_rev +]&nbsp;thousand crowns</td></tr> ?]
+[? if tax_cities == 1 : <tr><td> City duties, paid by towns and cities which are direct subjects of the Crown</td><td> [+ tax_cities_rev +]&nbsp;thousand crowns</td></tr> ?]
+[? if tax_poll == 1 : <tr><td> Poll tax</td><td> [+ tax_poll_rev +]&nbsp;thousand crowns</td></tr> ?]
+[? if tax_land == 1 : <tr><td> Land tax</td><td> [+ tax_land_rev +]&nbsp;thousand crowns</td></tr> ?]
+[? if tax_houses == 1 : <tr><td> Window tax</td><td> [+ tax_houses_rev +]&nbsp;thousand crowns</td></tr> ?]
+[? if tax_consum == 1 : <tr><td> Luxury goods taxes</td><td> [+ tax_consum_rev +]&nbsp;thousand crowns</td></tr> ?]
+[? if tax_income == 1 : <tr><td> Income tax</td><td> [+ tax_income_rev +]&nbsp;thousand crowns</td></tr> ?]
+[? if tax_tithe == 1 : <tr><td> Royal tithe, collected by the clergy along the tithe <em>proper</em></td><td> [+ tax_tithe_rev +]&nbsp;thousand crowns</td></tr> ?]
+<tr><th>Current tolls:</th></tr>
+[? if toll_novigrad == 1 : <tr><td> Toll on Pontar river in Novigrad</td><td> [+ toll_novigrad_rev +]&nbsp;thousand crowns</td></tr> ?]
+[? if toll_blaviken == 1 : <tr><td> Toll on Buina river in Blaviken</td><td> [+ toll_blaviken_rev +]&nbsp;thousand crowns</td></tr> ?]
+[? if toll_vartburg == 1 : <tr><td> Toll on Braa river in Vartburg</td><td> [+ toll_vartburg_rev +]&nbsp;thousand crowns</td></tr> ?]
+[? if road_tolls == 1 : <tr><td> Tolls on various royal roads and bridges in the country</td><td> [+ road_tolls_rev +]&nbsp;thousand crowns</td></tr> ?]
+</table>
 
 - @dijkstra: Back
