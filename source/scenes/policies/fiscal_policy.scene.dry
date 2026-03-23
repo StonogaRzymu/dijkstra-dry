@@ -5,9 +5,9 @@ new-page: true
 
 Current taxes:
 
-[? if tax_vassals == 1 : – Feudal duties, paid by nobles owning lands as vassals ?]
+[? if tax_vassals == 1 : – Feudal duties, paid by nobles owning lands as vassals: [+ tax_vassals_rev +] thousand crowns ?]
 
-[? if tax_cities == 1 : – City duties, paid by towns and cities which are direct subjects of the Crown ?]
+[? if tax_cities == 1 : – City duties, paid by towns and cities which are direct subjects of the Crown: [+ tax_cities_rev +] thousand crowns ?]
 
 [? if tax_poll == 1 : – Poll tax ?]
 
@@ -19,16 +19,16 @@ Current taxes:
 
 [? if tax_income == 1 : – Income tax ?]
 
-[? if tax_tithe == 1 : – Royal tithe, collected by the clergy along the tithe <em>proper</em> ?]
+[? if tax_tithe == 1 : – Royal tithe, collected by the clergy along the tithe <em>proper</em>: [+ tax_tithe_rev +] thousand crowns ?]
 
 Current tolls:
 
-[? if toll_novigrad == 1 : – Toll on Pontar river in Novigrad ?]
+[? if toll_novigrad == 1 : – Toll on Pontar river in Novigrad: [+ toll_novigrad_rev +] thousand crowns ?]
 
-[? if toll_blaviken == 1 : – Toll on Buina river in Blaviken ?]
+[? if toll_blaviken == 1 : – Toll on Buina river in Blaviken: [+ toll_novigrad_rev +] thousand crowns ?]
 
-[? if toll_vartburg == 1 : – Toll on Braa river in Vartburg ?]
+[? if toll_vartburg == 1 : – Toll on Braa river in Vartburg: [+ toll_novigrad_rev +] thousand crowns ?]
 
-[? if road_tolls == 1 : – Tolls on various royal roads and bridges in the country ?]
+[? if road_tolls == 1 : – Tolls on various royal roads and bridges in the country: [+ road_toll_rev +] thousand crowns ?]
 
 - @dijkstra: Back
