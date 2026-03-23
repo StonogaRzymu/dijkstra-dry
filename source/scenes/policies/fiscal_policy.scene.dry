@@ -5,22 +5,22 @@ new-page: true
 
 Current taxes:
 
-[? tax_poll == 1 : – Poll tax ?]
+[? if tax_poll == 1 : – Poll tax ?]
 
-[? tax_land == 1 : – Land tax ?]
+[? if tax_land == 1 : – Land tax ?]
 
-[? tax_houses == 1 : – Window tax ?]
+[? if tax_houses == 1 : – Window tax ?]
 
-[? tax_income == 1 : – Income tax ?]
+[? if tax_income == 1 : – Income tax ?]
 
-[? tax_tithe == 1 : – Royal tithe, collected by the clergy along the tithe *proper* ?]
+[? if tax_tithe == 1 : – Royal tithe, collected by the clergy along the tithe *proper* ?]
 
 [? if toll_novigrad == 1 or toll_blaviken == 1 or toll_vartburg == 1 : Current tolls: ?]
 
-[? toll_novigrad == 1 : – Toll on Pontar river in Novigrad ?]
+[? if toll_novigrad == 1 : – Toll on Pontar river in Novigrad ?]
 
-[? toll_blaviken == 1 : – Toll on Buina river in Blaviken ?]
+[? if toll_blaviken == 1 : – Toll on Buina river in Blaviken ?]
 
-[? toll_vartburg == 1 : – Toll on Braa river in Vartburg ?]
+[? if toll_vartburg == 1 : – Toll on Braa river in Vartburg ?]
 
 - @dijkstra: Back
