@@ -5,30 +5,30 @@ new-page: true
 
 Current taxes:
 
-[? if tax_vassals == 1 : – Feudal duties, paid by nobles owning lands as vassals: [+ tax_vassals_rev +] thousand crowns ?]
+[? if tax_vassals == 1 : – Feudal duties, paid by nobles owning lands as vassals: [+ tax_vassals_rev +]&nbsp;thousand crowns ?]
 
-[? if tax_cities == 1 : – City duties, paid by towns and cities which are direct subjects of the Crown: [+ tax_cities_rev +] thousand crowns ?]
+[? if tax_cities == 1 : – City duties, paid by towns and cities which are direct subjects of the Crown: [+ tax_cities_rev +]&nbsp;thousand crowns ?]
 
-[? if tax_poll == 1 : – Poll tax: [+ tax_poll_rev +] thousand crowns ?]
+[? if tax_poll == 1 : – Poll tax: [+ tax_poll_rev +]&nbsp;thousand crowns ?]
 
-[? if tax_land == 1 : – Land tax: [+ tax_land_rev +] thousand crowns ?]
+[? if tax_land == 1 : – Land tax: [+ tax_land_rev +]&nbsp;thousand crowns ?]
 
-[? if tax_houses == 1 : – Window tax: [+ tax_houses_rev +] thousand crowns ?]
+[? if tax_houses == 1 : – Window tax: [+ tax_houses_rev +]&nbsp;thousand crowns ?]
 
-[? if tax_consum == 1 : – Luxury goods taxes: [+ tax_consum_rev +] thousand crowns ?]
+[? if tax_consum == 1 : – Luxury goods taxes: [+ tax_consum_rev +]&nbsp;thousand crowns ?]
 
-[? if tax_income == 1 : – Income tax: [+ tax_income_rev +] thousand crowns ?]
+[? if tax_income == 1 : – Income tax: [+ tax_income_rev +]&nbsp;thousand crowns ?]
 
-[? if tax_tithe == 1 : – Royal tithe, collected by the clergy along the tithe <em>proper</em>: [+ tax_tithe_rev +] thousand crowns ?]
+[? if tax_tithe == 1 : – Royal tithe, collected by the clergy along the tithe <em>proper</em>: [+ tax_tithe_rev +]&nbsp;thousand crowns ?]
 
 Current tolls:
 
-[? if toll_novigrad == 1 : – Toll on Pontar river in Novigrad: [+ toll_novigrad_rev +] thousand crowns ?]
+[? if toll_novigrad == 1 : – Toll on Pontar river in Novigrad: [+ toll_novigrad_rev +]&nbsp;thousand crowns ?]
 
-[? if toll_blaviken == 1 : – Toll on Buina river in Blaviken: [+ toll_blaviken_rev +] thousand crowns ?]
+[? if toll_blaviken == 1 : – Toll on Buina river in Blaviken: [+ toll_blaviken_rev +]&nbsp;thousand crowns ?]
 
-[? if toll_vartburg == 1 : – Toll on Braa river in Vartburg: [+ toll_vartburg_rev +] thousand crowns ?]
+[? if toll_vartburg == 1 : – Toll on Braa river in Vartburg: [+ toll_vartburg_rev +]&nbsp;thousand crowns ?]
 
-[? if road_tolls == 1 : – Tolls on various royal roads and bridges in the country: [+ road_toll_rev +] thousand crowns ?]
+[? if road_tolls == 1 : – Tolls on various royal roads and bridges in the country: [+ road_toll_rev +]&nbsp;thousand crowns ?]
 
 - @dijkstra: Back
