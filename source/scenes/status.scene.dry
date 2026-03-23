@@ -4,7 +4,9 @@ is-special: true
 
 = Status
 
-Budget: [+ budget +]
+Budget: [+ budget +] thousand crowns
+
+Budget balance: [+ budget_balance +] thousand crowns
 
 Administrative capacity: [+ admin_cap +]
 
