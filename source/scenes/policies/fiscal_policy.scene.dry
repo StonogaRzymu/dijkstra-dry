@@ -5,7 +5,7 @@ new-page: true
 
 Current taxes:
 
-[? if tax_feudal == 1 : – Feudal duties, paid by nobles owning lands as vassals ?]
+[? if tax_vassals == 1 : – Feudal duties, paid by nobles owning lands as vassals ?]
 
 [? if tax_cities == 1 : – City duties, paid by towns and cities which are direct subjects of the Crown ?]
 
