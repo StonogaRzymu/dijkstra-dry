@@ -208,3 +208,8 @@ view-if: income_tax == 0
 Here is tax description
 
 - @fiscal_policy: Back
+
+@tolls
+Title: Adjust tolls
+
+- fiscal_policy: Back
