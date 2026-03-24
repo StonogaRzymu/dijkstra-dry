@@ -6,7 +6,7 @@ new-page: true
 <table>
 <tr><th>Current taxes:</th></tr>
 [? if tax_vassals == 1 : <tr><td style="table-label"> Feudal duties</br><small>paid by nobles owning lands as vassals</small></td><td style="table-value"> [+ tax_vassals_rev +]&nbsp;thousand crowns</td></tr> ?]
-[? if tax_cities == 1 : <tr><td style="table-label"> City duties</br><small>paid by towns and cities which are direct subjects of the Crown</small></td><td style="table-value"> [+ tax_cities_rev +]&nbsp;thousand crowns</td></tr> ?]
+[? if tax_cities == 1 : <tr><td style="table-label"> City duties</br><small>paid by towns and cities directly subject to the Crown</small></td><td style="table-value"> [+ tax_cities_rev +]&nbsp;thousand crowns</td></tr> ?]
 [? if tax_poll == 1 : <tr><td style="table-label"> Poll tax</td><td style="table-value"> [+ tax_poll_rev +]&nbsp;thousand crowns</td></tr> ?]
 [? if tax_land == 1 : <tr><td style="table-label"> Land tax</td><td style="table-value"> [+ tax_land_rev +]&nbsp;thousand crowns</td></tr> ?]
 [? if tax_houses == 1 : <tr><td style="table-label"> Window tax</td><td style="table-value"> [+ tax_houses_rev +]&nbsp;thousand crowns</td></tr> ?]
