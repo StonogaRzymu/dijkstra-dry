@@ -5,7 +5,7 @@ new-page: true
 
 <table>
 <tr><th>Current taxes:</th></tr>
-[? if tax_vassals == 1 : <tr><td style="table-label"> Feudal duties</br><small>paid by nobles owning lands as vassals</small></td><td style="table-value"> [+ tax_vassals_rev +]&nbsp;thousand crowns</td></tr> ?]
+[? if tax_vassals == 1 : <tr><td style="table-label"> Feudal duties</td><td style="table-value"> [+ tax_vassals_rev +]&nbsp;thousand crowns</td></tr> ?]
 [? if tax_cities == 1 : <tr><td style="table-label"> City duties</br><small>paid by towns and cities directly subject to the Crown</small></td><td style="table-value"> [+ tax_cities_rev +]&nbsp;thousand crowns</td></tr> ?]
 [? if tax_poll == 1 : <tr><td style="table-label"> Poll tax</td><td style="table-value"> [+ tax_poll_rev +]&nbsp;thousand crowns</td></tr> ?]
 [? if tax_land == 1 : <tr><td style="table-label"> Land tax</td><td style="table-value"> [+ tax_land_rev +]&nbsp;thousand crowns</td></tr> ?]
@@ -41,6 +41,14 @@ title: Adjust taxes
 title: Adjust feudal duties
 view-if: tax_vassals == 1
 on-arrival: tax_changed = "vassals"
+
+Feudal duties are a collection of taxes paid by nobles owning lands as vassals. Due to their archaic form nobles have tried and tested tactics of avoiding them. For that reason their efficacy is directly linked to the loyalty of aristocracy and petty nobility.
+
+Current revenue:
+
+Current rate: 
+
+Current efficacy: 
 
 - @increase_tax: Increase rates
 - @decrease_tax: Decrease rates
