@@ -13,6 +13,8 @@ Q.intel = 50;
 
 // estates
 
+Q.estates = {};
+
 Q.estates["aristocracy"].inf    = 40;
 Q.estates["petty_nobility"].inf = 30;
 Q.estates["guilds"].inf         = 15;
@@ -26,6 +28,8 @@ Q.estates["church"].sat         = 20;
 Q.estates["peasants"].sat       = 30;
 
 // provinces
+
+Q.provinces = {};
 
 Q.provinces["low_red"].control = 50
 Q.provinces["upp_red"].control = 35
@@ -72,6 +76,8 @@ Q.provinces["gelibol"].trade = 200
 Q.provinces["low_red"].novigrad_trade = 1500
 
 // taxes
+
+Q.taxes = {};
 
 Q.taxes["vassals"].id      = "vassals"
 Q.taxes["vassals"].name    = "feudal duties"
