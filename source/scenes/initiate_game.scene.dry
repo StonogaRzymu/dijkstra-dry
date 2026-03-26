@@ -14,6 +14,7 @@ Q.intel = 50;
 // estates
 
 Q.estates = {};
+console.log(Q.estates)
 
 Q.estates["aristocracy"].inf    = 40;
 Q.estates["petty_nobility"].inf = 30;
