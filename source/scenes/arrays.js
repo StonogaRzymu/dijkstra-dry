@@ -60,13 +60,11 @@ Q.provinces["coast"].wealth   =  200
 Q.provinces["tridam"].wealth  =  200
 Q.provinces["gelibol"].wealth =  300
 
-Q.provinces["low_red"].trade = 500
+Q.provinces["low_red"].trade = 2000
 Q.provinces["upp_red"].trade = 600
 Q.provinces["coast"].trade   = 300
 Q.provinces["tridam"].trade  = 500
 Q.provinces["gelibol"].trade = 200
-
-Q.provinces["low_red"].novigrad_trade = 1500
 
 // taxes
 
@@ -78,7 +76,6 @@ Q.taxes["vassals"].rate    = 1
 Q.taxes["vassals"].metrics = ["land", "pop"]
 Q.taxes["vassals"].eff     = 0.5
 Q.taxes["vassals"].rev     = 0
-Q.taxes["vassals"].desc = ""
 
 Q.taxes["cities"].id      = "cities"
 Q.taxes["cities"].name    = "city duties"
@@ -88,7 +85,6 @@ Q.taxes["cities"].rate    = 1
 Q.taxes["cities"].metrics = ["wealth"]
 Q.taxes["cities"].eff     = 0.5
 Q.taxes["cities"].rev     = 0
-Q.taxes["cities"].desc = "paid by towns and cities directly subject to the Crown"
 
 Q.taxes["poll"].id      = "poll"
 Q.taxes["poll"].name    = "poll tax"
@@ -98,7 +94,6 @@ Q.taxes["poll"].rate    = 1
 Q.taxes["poll"].metrics = ["pop"]
 Q.taxes["poll"].eff     = 0
 Q.taxes["poll"].rev     = 0
-Q.taxes["poll"].desc = ""
 
 Q.taxes["land"].id      = "land"
 Q.taxes["land"].name    = "land tax"
@@ -108,7 +103,6 @@ Q.taxes["land"].rate    = 1
 Q.taxes["land"].metrics = ["land"]
 Q.taxes["land"].eff     = 0
 Q.taxes["land"].rev     = 0
-Q.taxes["land"].desc = ""
 
 Q.taxes["houses"].id      = "houses"
 Q.taxes["houses"].name    = "window tax"
@@ -118,7 +112,6 @@ Q.taxes["houses"].rate    = 1
 Q.taxes["houses"].metrics = ["wealth, pop"]
 Q.taxes["houses"].eff     = 0
 Q.taxes["houses"].rev     = 0
-Q.taxes["houses"].desc = ""
 
 Q.taxes["income"].id      = "income"
 Q.taxes["income"].name    = "income tax"
@@ -128,7 +121,6 @@ Q.taxes["income"].rate    = 1
 Q.taxes["income"].metrics = ["wealth"]
 Q.taxes["income"].eff     = 0
 Q.taxes["income"].rev     = 0
-Q.taxes["income"].desc = ""
 
 Q.taxes["consum"].id      = "consum"
 Q.taxes["consum"].name    = "goods tax"
@@ -138,7 +130,6 @@ Q.taxes["consum"].rate    = 1
 Q.taxes["consum"].metrics = [""]
 Q.taxes["consum"].eff     = 0
 Q.taxes["consum"].rev     = 0
-Q.taxes["consum"].desc = ""
 
 Q.taxes["tithe"].id      = "tithe"
 Q.taxes["tithe"].name    = "royal tithe"
@@ -148,17 +139,15 @@ Q.taxes["tithe"].rate    = 1
 Q.taxes["tithe"].metrics = ["pop, land"]
 Q.taxes["tithe"].eff     = 0.5
 Q.taxes["tithe"].rev     = 0
-Q.taxes["tithe"].desc = "collected by the clergy along the tithe <em>proper</em>"
 
 Q.taxes["toll_novigrad"].id      = "toll_novigrad"
 Q.taxes["toll_novigrad"].name    = "Novigradian toll"
 Q.taxes["toll_novigrad"].active  = true
 Q.taxes["toll_novigrad"].base    = 0.5
 Q.taxes["toll_novigrad"].rate    = 1
-Q.taxes["toll_novigrad"].metrics = ["novigrad_trade"]
+Q.taxes["toll_novigrad"].metrics = ["trade"]
 Q.taxes["toll_novigrad"].eff     = 0.5
 Q.taxes["toll_novigrad"].rev     = 0
-Q.taxes["toll_novigrad"].desc = "Toll on Pontar river in Novigrad"
 
 Q.taxes["tolls"].id      = "tolls"
 Q.taxes["tolls"].name    = "Other tolls"
@@ -168,4 +157,25 @@ Q.taxes["tolls"].rate    = 1
 Q.taxes["tolls"].metrics = ["trade"]
 Q.taxes["tolls"].eff     = 0.7
 Q.taxes["tolls"].rev     = 0
-Q.taxes["tolls"].desc = "Includes tolls on various royal roads and bridges, toll on Buina in Blaviken and toll on Braa in Vartburg"
+
+Q.taxes.forEach((tax) => {
+    if (tax.active) {
+        let base = 0;
+        Q.provinces.forEach((prov) => {
+            if (tax.metrics.includes("pop")){
+                base += prov.pop * prov.control
+            }
+            if (tax.metrics.includes("land")){
+                base += prov.land * prov.control
+            }
+            if (tax.metrics.includes("wealth")){
+                base += prov.wealth * prov.control
+            }
+            if (tax.metrics.includes("trade")){
+                base += prov.trade * prov.control
+            }
+        })
+        base /= tax.metrics.length   
+        Q.taxes[tax.id].rev = Math.round(base * tax.base * tax.rate * tax.eff) / 100
+    }
+});
