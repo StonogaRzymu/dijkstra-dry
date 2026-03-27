@@ -2,6 +2,8 @@ title: Fiscal policy
 new-page: true
 on-arrival: {!
 
+Q.budget_balance = 0
+
 Object.entries(Q.taxes).forEach((tax_obj) => {
     let tax = tax_obj[1]
     if (tax.active) {
@@ -28,11 +30,14 @@ Object.entries(Q.taxes).forEach((tax_obj) => {
         rev = Math.round(base * tax.base * tax.rate * tax.eff) / 100
         
         Q.taxes[tax_obj[0]].rev = rev
+        console.log(rev)
         Q.budget_balance += rev
+        console.log(Q.budget_balance)
     }
 });
-
+console.log(Q.budget_balance)
 Q.budget_balance = Math.round(Q.budget_balance * 10) / 10;
+console.log(Q.budget_balance)
 
 !}
 
@@ -73,7 +78,7 @@ title: Adjust taxes
 
 @vassals_tax
 title: Adjust feudal duties
-view-if: {! Q.taxes["vassals"].active !}
+view-if: taxes_vassals_active == true
 on-arrival: {! Q.tax_changed = "vassals";
 Q.name = Q.taxes[Q.tax_changed].name.toUpperCase() !}
 new-page: true
@@ -221,8 +226,7 @@ title: Introduce new taxes
 
 @intro_poll_tax
 Title: Introduce poll tax
-on-arrival: {! Q.desc = Q.taxes["poll"].desc !}
-view-if: {! Q.taxes["poll"].active == false !}
+view-if: taxes_poll_active == false
 
 = Introduce [+ taxes_poll_name +]
 
@@ -233,8 +237,7 @@ view-if: {! Q.taxes["poll"].active == false !}
 
 @intro_land_tax
 Title: Introduce land tax
-on-arrival: {! Q.desc = Q.taxes["land"].desc !}
-view-if: {! Q.taxes["land"].active == false !}
+view-if: taxes_land_active == false
 
 = Introduce [+ taxes_land_name +]
 
