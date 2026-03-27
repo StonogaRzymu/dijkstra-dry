@@ -96,8 +96,10 @@ Current rate: [+ taxes_vassals_rate : tax_rates +]
 Current efficacy: [+ taxes_vassals_eff : tax_eff +]
 
 - @increase_tax: Increase rates
+- @increase_slightly_tax: Slightly increase rates
+- @decrease_slightly_tax: Slightly decrease rates
 - @decrease_tax: Decrease rates
-- @change_taxes: Back
+- @tolls: Back
 
 @cities_tax
 title: Adjust city duties
@@ -118,8 +120,10 @@ Current rate: [+ taxes_cities_rate : tax_rates +]
 Current efficacy: [+ taxes_cities_eff : tax_eff +]
 
 - @increase_tax: Increase rates
+- @increase_slightly_tax: Slightly increase rates
+- @decrease_slightly_tax: Slightly decrease rates
 - @decrease_tax: Decrease rates
-- @change_taxes: Back
+- @tolls: Back
 
 @poll_tax
 title: Adjust poll tax
@@ -139,6 +143,12 @@ Current rate: [+ taxes_poll_rate : tax_rates +]
 
 Current efficacy: [+ taxes_poll_eff : tax_eff +]
 
+- @increase_tax: Increase rates
+- @increase_slightly_tax: Slightly increase rates
+- @decrease_slightly_tax: Slightly decrease rates
+- @decrease_tax: Decrease rates
+- @tolls: Back
+
 @land_tax
 title: Adjust land tax
 subtitle: Current rates: [+ taxes_land_rate: tax_rates +]
@@ -156,6 +166,12 @@ Current revenue: [+ taxes_land_rev +]&nbsp;thousand crowns
 Current rate: [+ taxes_land_rate : tax_rates +]
 
 Current efficacy: [+ taxes_land_eff : tax_eff +]
+
+- @increase_tax: Increase rates
+- @increase_slightly_tax: Slightly increase rates
+- @decrease_slightly_tax: Slightly decrease rates
+- @decrease_tax: Decrease rates
+- @tolls: Back
 
 @houses_tax
 title: Adjust window tax
@@ -176,8 +192,10 @@ Current rate: [+ taxes_houses_rate : tax_rates +]
 Current efficacy: [+ taxes_houses_eff : tax_eff +]
 
 - @increase_tax: Increase rates
+- @increase_slightly_tax: Slightly increase rates
+- @decrease_slightly_tax: Slightly decrease rates
 - @decrease_tax: Decrease rates
-- @change_taxes: Back
+- @tolls: Back
 
 @income_tax
 title: Adjust income tax
@@ -198,8 +216,10 @@ Current rate: [+ taxes_income_rate : tax_rates +]
 Current efficacy: [+ taxes_income_eff : tax_eff +]
 
 - @increase_tax: Increase rates
+- @increase_slightly_tax: Slightly increase rates
+- @decrease_slightly_tax: Slightly decrease rates
 - @decrease_tax: Decrease rates
-- @change_taxes: Back
+- @tolls: Back
 
 @consum_tax
 title: Adjust tax on goods
@@ -220,8 +240,10 @@ Current rate: [+ taxes_consum_rate : tax_rates +]
 Current efficacy: [+ taxes_consum_eff : tax_eff +]
 
 - @increase_tax: Increase rates
+- @increase_slightly_tax: Slightly increase rates
+- @decrease_slightly_tax: Slightly decrease rates
 - @decrease_tax: Decrease rates
-- @change_taxes: Back
+- @tolls: Back
 
 @new_taxes
 title: Introduce new taxes
