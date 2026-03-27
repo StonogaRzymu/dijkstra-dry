@@ -30,14 +30,12 @@ Object.entries(Q.taxes).forEach((tax_obj) => {
         rev = Math.round(base * tax.base * tax.rate * tax.eff) / 100
         
         Q.taxes[tax_obj[0]].rev = rev
-        console.log(rev)
+
         Q.budget_balance += rev
-        console.log(Q.budget_balance)
     }
 });
-console.log(Q.budget_balance)
+
 Q.budget_balance = Math.round(Q.budget_balance * 10) / 10;
-console.log(Q.budget_balance)
 
 !}
 
@@ -322,14 +320,14 @@ Current efficacy: [+ taxes_tolls_eff : tax_eff +]
 
 @increase_tax
 title: Increase tax rate
-on-arrival: {! Q.taxes["Q.tax_changed"].rate += 0.1 !}
+on-arrival: {! Q.taxes[Q.tax_changed].rate += 0.1 !}
 go-to: change_taxes
 
 [+ name +] – slightly increased.
 
 @decrease_tax
 title: Decrease tax rate
-on-arrival: {! Q.taxes["Q.tax_changed"].rate -= 0.1 !}
+on-arrival: {! Q.taxes[Q.tax_changed].rate -= 0.1 !}
 go-to: change_taxes
 
 [+ name +] – slightly decreased.

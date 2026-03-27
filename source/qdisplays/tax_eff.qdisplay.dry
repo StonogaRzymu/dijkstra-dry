@@ -1,8 +1,8 @@
 
-(..0.05) Nonexistent
-(0.05..0.14) Very low
-(0.14..0.24) Low
-(0.24..0.44) Medium-low
-(0.44..0.69) Medium
-(0.69..1) High
-(1..) Very high
+(..0.05) nonexistent
+(0.05..0.14) very low
+(0.14..0.24) low
+(0.24..0.44) medium-low
+(0.44..0.69) medium
+(0.69..1) high
+(1..) very high

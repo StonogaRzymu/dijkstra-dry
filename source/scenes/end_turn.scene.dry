@@ -43,14 +43,13 @@ Object.entries(Q.taxes).forEach((tax_obj) => {
         rev = Math.round(base * tax.base * tax.rate * tax.eff) / 100
         
         Q.taxes[tax_obj[0]].rev = rev
-        console.log(rev)
+
         Q.budget_balance += rev
-        console.log(Q.budget_balance)
+
     }
 });
-console.log(Q.budget_balance)
+
 Q.budget_balance = Math.round(Q.budget_balance * 10) / 10;
-console.log(Q.budget_balance)
 
 Q.budget += Q.budget_balance;
 
