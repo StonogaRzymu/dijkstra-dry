@@ -78,7 +78,7 @@ title: Adjust taxes
 
 @vassals_tax
 title: Adjust feudal duties
-view-if: taxes_vassals_active == true
+view-if: taxes_vassals_active = true
 on-arrival: {! Q.tax_changed = "vassals";
 Q.name = Q.taxes[Q.tax_changed].name.toUpperCase() !}
 new-page: true
@@ -99,7 +99,7 @@ Current efficacy: [+ taxes_vassals_eff : tax_eff +]
 
 @cities_tax
 title: Adjust city duties
-view-if: {! Q.taxes["cities"].active !}
+view-if: taxes_cities_active = true
 on-arrival: {! Q.tax_changed = "cities";
 Q.name = Q.taxes[Q.tax_changed].name.toUpperCase() !}
 new-page: true
@@ -120,7 +120,7 @@ Current efficacy: [+ taxes_cities_eff : tax_eff +]
 
 @poll_tax
 title: Adjust poll tax
-view-if: {! Q.taxes["poll"].active !}
+view-if: taxes_poll_active = true
 on-arrival: {! Q.tax_changed = "poll";
 Q.name = Q.taxes[Q.tax_changed].name.toUpperCase() !}
 new-page: true
@@ -137,7 +137,7 @@ Current efficacy: [+ taxes_poll_eff : tax_eff +]
 
 @land_tax
 title: Adjust land tax
-view-if: {! Q.taxes["land"].active !}
+view-if:taxes_land_active = true
 on-arrival: {! Q.tax_changed = "land";
 Q.name = Q.taxes[Q.tax_changed].name.toUpperCase() !}
 new-page: true
@@ -154,7 +154,7 @@ Current efficacy: [+ taxes_land_eff : tax_eff +]
 
 @houses_tax
 title: Adjust window tax
-view-if: {! Q.taxes["houses"].active !}
+view-if: taxes_houses_active = true
 on-arrival: {! Q.tax_changed = "houses";
 Q.name = Q.taxes[Q.tax_changed].name.toUpperCase() !}
 new-page: true
@@ -175,7 +175,7 @@ Current efficacy: [+ taxes_houses_eff : tax_eff +]
 
 @income_tax
 title: Adjust income tax
-view-if: {! Q.taxes["income"].active !}
+view-if: taxes_income_active = true
 on-arrival: {! Q.tax_changed = "income";
 Q.name = Q.taxes[Q.tax_changed].name.toUpperCase() !}
 new-page: true
@@ -196,7 +196,7 @@ Current efficacy: [+ taxes_income_eff : tax_eff +]
 
 @consum_tax
 title: Adjust tax on goods
-view-if: {! Q.taxes["consum"].active !}
+view-if: taxes_consum_active = true
 on-arrival: {! Q.tax_changed = "consum";
 Q.name = Q.taxes[Q.tax_changed].name.toUpperCase() !}
 new-page: true
@@ -226,7 +226,7 @@ title: Introduce new taxes
 
 @intro_poll_tax
 Title: Introduce poll tax
-view-if: taxes_poll_active == false
+view-if: taxes_poll_active = false
 
 = Introduce [+ taxes_poll_name +]
 
@@ -237,7 +237,7 @@ view-if: taxes_poll_active == false
 
 @intro_land_tax
 Title: Introduce land tax
-view-if: taxes_land_active == false
+view-if: taxes_land_active = false
 
 = Introduce [+ taxes_land_name +]
 
@@ -249,7 +249,7 @@ view-if: taxes_land_active == false
 @intro_houses_tax
 Title: Introduce window tax
 on-arrival: {! Q.desc = Q.taxes["houses"].desc !}
-view-if: {! Q.taxes["houses"].active == false !}
+view-if: taxes_houses_active = false
 
 = Introduce [+ taxes_houses_name +]
 
@@ -261,7 +261,7 @@ view-if: {! Q.taxes["houses"].active == false !}
 @intro_income_tax
 Title: Introduce income tax
 on-arrival: {! Q.desc = Q.taxes["income"].desc !}
-view-if: {! Q.taxes["income"].active == false !}
+view-if: taxes_income_active = false
 
 = Introduce [+ taxes_income_name +]
 
@@ -278,7 +278,7 @@ Title: Adjust tolls
 
 @novigrad_toll
 Title: Adjust Novigrad toll
-view-if: {! Q.taxes["toll_novigrad"].active !}
+view-if: taxes_toll_novigrad_active = true 
 on-arrival: {!
 Q.tax_changed = "toll_novigrad"
 Q.name = Q.taxes[Q.tax_changed].name.toUpperCase() !}
@@ -303,7 +303,7 @@ Title: Adjust Novigrad toll
 on-arrival: {!
 Q.tax_changed = "tolls"
 Q.name = Q.taxes[Q.tax_changed].name.toUpperCase() !}
-view-if: {! Q.taxes["tolls"].active !}
+view-if: taxes_tolls_active = true
 new-page: true
 
 [+ name +]
