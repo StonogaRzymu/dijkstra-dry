@@ -265,23 +265,23 @@
       $('#qualities').append(dendryUI.contentToHTML.convert(displayContent));
   };
   
-  window.dendryUI.dendryEngine.state.qualities.deobjectify = function() {
-    
-    Object.entries(this.estates).forEach((obj) => {
+  window.deobjectify = function() {
+
+    Object.entries(window.dendryUI.dendryEngine.state.qualities.estates).forEach((obj) => {
         Object.entries(obj[1]).forEach((prop) => {
-            Object.defineProperty(this, "estates_"+obj[0]+"_"+prop[0], {value: prop[1]})
+            Object.defineProperty(window.dendryUI.dendryEngine.state.qualities, "estates_"+obj[0]+"_"+prop[0], {value: prop[1]})
         });
     });
 
-    Object.entries(this.provinces).forEach((obj) => {
+    Object.entries(window.dendryUI.dendryEngine.state.qualities.provinces).forEach((obj) => {
         Object.entries(obj[1]).forEach((prop) => {
-            Object.defineProperty(this, "estates_"+obj[0]+"_"+prop[0], {value: prop[1]})
+            Object.defineProperty(window.dendryUI.dendryEngine.state.qualities, "estates_"+obj[0]+"_"+prop[0], {value: prop[1]})
         });
     });
 
-    Object.entries(this.taxes).forEach((obj) => {
+    Object.entries(window.dendryUI.dendryEngine.state.qualities.taxes).forEach((obj) => {
         Object.entries(obj[1]).forEach((prop) => {
-            Object.defineProperty(this, "estates_"+obj[0]+"_"+prop[0], {value: prop[1]})
+            Object.defineProperty(window.dendryUI.dendryEngine.state.qualities, "estates_"+obj[0]+"_"+prop[0], {value: prop[1]})
         });
     });
 
