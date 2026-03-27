@@ -336,7 +336,7 @@ on-arrival: {!
 
     Object.entries(Q.taxes).forEach((tax_obj) => {
         let tax = tax_obj[1]
-        if (tax.active && (tax.id == Q.tax_changed)) {
+        if (tax.active) {
             let base = 0;
             Object.entries(Q.provinces).forEach((prov_obj) => {
                 let prov = prov_obj[1]
@@ -382,7 +382,7 @@ on-arrival: {!
 
     Object.entries(Q.taxes).forEach((tax_obj) => {
         let tax = tax_obj[1]
-        if (tax.active && (tax.id == Q.tax_changed)) {
+        if (tax.active) {
             let base = 0;
             Object.entries(Q.provinces).forEach((prov_obj) => {
                 let prov = prov_obj[1]
@@ -411,7 +411,7 @@ on-arrival: {!
 
         }
     });
-    
+
     Q.budget_balance = Math.round(Q.budget_balance * 10) / 10;
 !}
 new-page: true
