@@ -290,7 +290,7 @@
   // This function runs on every new content display. Currently, all it does is update the sidebar.
   window.onDisplayContent = function() {
     if (window.dendryUI.dendryEngine.state.qualities.initiated == true) {
-        window.dendryUI.dendryEngine.state.qualities.deobjectify();
+        window.deobjectify();
     }
     window.updateSidebar();
   };
