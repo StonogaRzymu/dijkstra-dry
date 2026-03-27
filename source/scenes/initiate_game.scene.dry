@@ -111,7 +111,7 @@ Q.taxes["vassals"].rate    = 1
 Q.taxes["vassals"].metrics = ["land", "pop"]
 Q.taxes["vassals"].eff     = 0.5
 Q.taxes["vassals"].rev     = 0
-Q.taxes["vassals"].desc = ""
+Q.taxes["vassals"].desc = "Taxes paid by landowners due to their feudal contract with the Crown"
 
 Q.taxes["cities"].id      = "cities"
 Q.taxes["cities"].name    = "city duties"
@@ -121,7 +121,7 @@ Q.taxes["cities"].rate    = 1
 Q.taxes["cities"].metrics = ["wealth"]
 Q.taxes["cities"].eff     = 0.5
 Q.taxes["cities"].rev     = 0
-Q.taxes["cities"].desc = "paid by towns and cities directly subject to the Crown"
+Q.taxes["cities"].desc = "Taxes paid by towns and cities directly subject to the Crown"
 
 Q.taxes["poll"].id      = "poll"
 Q.taxes["poll"].name    = "poll tax"
@@ -131,7 +131,7 @@ Q.taxes["poll"].rate    = 1
 Q.taxes["poll"].metrics = ["pop"]
 Q.taxes["poll"].eff     = 0
 Q.taxes["poll"].rev     = 0
-Q.taxes["poll"].desc = ""
+Q.taxes["poll"].desc = "Tax levied as a fixed sum on every every adult in the country, without reference to income or resources"
 
 Q.taxes["land"].id      = "land"
 Q.taxes["land"].name    = "land tax"
@@ -141,7 +141,7 @@ Q.taxes["land"].rate    = 1
 Q.taxes["land"].metrics = ["land"]
 Q.taxes["land"].eff     = 0
 Q.taxes["land"].rev     = 0
-Q.taxes["land"].desc = ""
+Q.taxes["land"].desc = "Land tax"
 
 Q.taxes["houses"].id      = "houses"
 Q.taxes["houses"].name    = "window tax"
@@ -151,7 +151,7 @@ Q.taxes["houses"].rate    = 1
 Q.taxes["houses"].metrics = ["wealth", "pop"]
 Q.taxes["houses"].eff     = 0
 Q.taxes["houses"].rev     = 0
-Q.taxes["houses"].desc = ""
+Q.taxes["houses"].desc = "Window tax"
 
 Q.taxes["income"].id      = "income"
 Q.taxes["income"].name    = "income tax"
@@ -161,7 +161,7 @@ Q.taxes["income"].rate    = 1
 Q.taxes["income"].metrics = ["wealth"]
 Q.taxes["income"].eff     = 0
 Q.taxes["income"].rev     = 0
-Q.taxes["income"].desc = ""
+Q.taxes["income"].desc = "Incom tax"
 
 Q.taxes["consum"].id      = "consum"
 Q.taxes["consum"].name    = "goods tax"
@@ -171,7 +171,7 @@ Q.taxes["consum"].rate    = 1
 Q.taxes["consum"].metrics = [""]
 Q.taxes["consum"].eff     = 0
 Q.taxes["consum"].rev     = 0
-Q.taxes["consum"].desc = ""
+Q.taxes["consum"].desc = "Consumption tax"
 
 Q.taxes["tithe"].id      = "tithe"
 Q.taxes["tithe"].name    = "royal tithe"
@@ -181,7 +181,7 @@ Q.taxes["tithe"].rate    = 1
 Q.taxes["tithe"].metrics = ["pop", "land"]
 Q.taxes["tithe"].eff     = 0.5
 Q.taxes["tithe"].rev     = 0
-Q.taxes["tithe"].desc = "collected by the clergy along the tithe <em>proper</em>"
+Q.taxes["tithe"].desc = "Royal tithe, collected by the clergy of the Eternal Fire along the tithe <em>proper</em>. In the cities is levied by the Church as a primitive income tax, while in the country it is collected in nature by the holy men."
 
 Q.taxes["toll_novigrad"].id      = "toll_novigrad"
 Q.taxes["toll_novigrad"].name    = "Novigradian toll"
@@ -201,7 +201,7 @@ Q.taxes["tolls"].rate    = 1
 Q.taxes["tolls"].metrics = ["trade"]
 Q.taxes["tolls"].eff     = 0.7
 Q.taxes["tolls"].rev     = 0
-Q.taxes["tolls"].desc = "Includes tolls on various royal roads and bridges, toll on Buina in Blaviken and toll on Braa in Vartburg"
+Q.taxes["tolls"].desc = "Include tolls on various royal roads and bridges, toll on Buina in Blaviken and toll on Braa in Vartburg"
 
 Q.initiated = true
 !}

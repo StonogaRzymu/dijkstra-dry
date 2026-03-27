@@ -64,6 +64,9 @@ Q.budget_balance = Math.round(Q.budget_balance * 10) / 10;
 
 @change_taxes
 title: Adjust taxes
+new-page: true
+
+= Fiscal policy
 
 - @vassals_tax: Adjust feudal duties
 - @cities_tax: Adjust city duties
@@ -215,6 +218,9 @@ Current efficacy: [+ taxes_consum_eff : tax_eff +]
 
 @new_taxes
 title: Introduce new taxes
+new-page: true
+
+= Fiscal policy
 
 - @intro_poll_tax: Introduce poll tax
 - @intro_land_tax: Introduce land tax
@@ -269,6 +275,9 @@ view-if: taxes_income_active = false
 
 @tolls
 Title: Adjust tolls
+new-page: true
+
+= Fiscal policy
 
 - @novigrad_toll: Adjust toll on Pontar in Novigrad
 - @other_tolls: Adjust other tolls on roads, bridges and rivers
@@ -321,6 +330,7 @@ Current efficacy: [+ taxes_tolls_eff : tax_eff +]
 @increase_tax
 title: Increase tax rate
 on-arrival: {! Q.taxes[Q.tax_changed].rate += 0.1 !}
+new-page: true
 go-to: change_taxes
 
 [+ name +] – slightly increased.
@@ -328,6 +338,7 @@ go-to: change_taxes
 @decrease_tax
 title: Decrease tax rate
 on-arrival: {! Q.taxes[Q.tax_changed].rate -= 0.1 !}
+new-page: true
 go-to: change_taxes
 
 [+ name +] – slightly decreased.
