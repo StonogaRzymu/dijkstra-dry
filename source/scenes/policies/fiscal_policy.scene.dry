@@ -310,6 +310,8 @@ Current rate: [+ taxes_toll_novigrad_rate : tax_rates +]
 Current efficacy: [+ taxes_toll_novigrad_eff : tax_eff +]
 
 - @increase_tax: Increase rates
+- @increase_slightly_tax: Slightly increase rates
+- @decrease_slightly_tax: Slightly decrease rates
 - @decrease_tax: Decrease rates
 - @tolls: Back
 
@@ -381,7 +383,7 @@ on-arrival: {!
     Q.budget_balance = Math.round(Q.budget_balance * 10) / 10;
 !}
 new-page: true
-go-to: change_taxes
+go-to: tolls if tax_changed = "tolls" or tax_changed = "toll_novigrad"; change_taxes
 
 [+ name +] – significantly increased.
 
@@ -428,7 +430,7 @@ on-arrival: {!
     Q.budget_balance = Math.round(Q.budget_balance * 10) / 10;
 !}
 new-page: true
-go-to: change_taxes
+go-to: tolls if tax_changed = "tolls" or tax_changed = "toll_novigrad"; change_taxes
 
 [+ name +] – slightly increased.
 
@@ -475,7 +477,7 @@ on-arrival: {!
     Q.budget_balance = Math.round(Q.budget_balance * 10) / 10;
 !}
 new-page: true
-go-to: change_taxes
+go-to: tolls if tax_changed = "tolls" or tax_changed = "toll_novigrad"; change_taxes
 
 [+ name +] – significantly decreased.
 
@@ -522,6 +524,6 @@ on-arrival: {!
     Q.budget_balance = Math.round(Q.budget_balance * 10) / 10;
 !}
 new-page: true
-go-to: change_taxes
+go-to: tolls if tax_changed = "tolls" or tax_changed = "toll_novigrad"; change_taxes
 
 [+ name +] – slightly decreased.
