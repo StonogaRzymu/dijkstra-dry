@@ -22,33 +22,33 @@ Dijkstra's intelligence: [+ intel +]
 
 **Aristocracy**
 
-Infuence:     [+ aristocracy_inf : inf +]
+Infuence:     [+ estates_aristocracy_inf : inf +]
 
-Satisfaction: [+ aristocracy_sat : sat +]
+Satisfaction: [+ estates_aristocracy_sat : sat +]
 
 **Petty Nobility**
 
-Infuence:     [+ petty_nobility_inf : inf +]
+Infuence:     [+ estates_petty_nobility_inf : inf +]
 
-Satisfaction: [+ petty_nobility_sat : sat +]
+Satisfaction: [+ estates_petty_nobility_sat : sat +]
 
 **Church of the Eternal Fire**
 
-Infuence:     [+ church_inf : inf +]
+Infuence:     [+ estates_church_inf : inf +]
 
-Satisfaction: [+ church_sat : sat +]
+Satisfaction: [+ estates_church_sat : sat +]
 
 **Guilds and Bourgeoisie**
 
-Infuence:     [+ guilds_inf : inf +]
+Infuence:     [+ estates_guilds_inf : inf +]
 
-Satisfaction: [+ guilds_sat : sat +]
+Satisfaction: [+ estates_guilds_sat : sat +]
 
 **Peasants**
 
-Infuence:     [+ peasants_inf : inf +]
+Infuence:     [+ estates_peasants_inf : inf +]
 
-Satisfaction: [+ peasants_sat : sat +]
+Satisfaction: [+ estates_peasants_sat : sat +]
 
 </div>
 
@@ -60,30 +60,30 @@ Satisfaction: [+ peasants_sat : sat +]
 
 Crown control: [+ estates_low_red_control +]
 
-Governor: [+ estates_low_red_governor +] ([+ low_red_gov_allegiance +])
+Governor: [+ estates_low_red_governor +] ([+ estates_low_red_gov_allegiance +])
 
 **Upper Redania**
 
-Crown control: [+ upp_red_cont: control +]
+Crown control: [+ estates_upp_red_cont: control +]
 
-Governor: [+ upp_red_gov +] ([+ upp_red_gov_allegiance +])
+Governor: [+ estates_upp_red_governor +] ([+ estates_upp_red_gov_allegiance +])
 
 **Coast of Praxeda**
 
-Crown control: [+ coast_cont: control +]
+Crown control: [+ estates_coast_cont: control +]
 
-Governor: [+ coast_gov +] ([+ coast_gov_allegiance +])
+Governor: [+ estates_coast_governor +] ([+ estates_coast_gov_allegiance +])
 
 **Tridam Marshes**
 
-Crown control: [+ tridam_cont: control +]
+Crown control: [+ estates_tridam_cont: control +]
 
-Governor: [+ tridam_gov +] ([+ tridam_gov_allegiance +])
+Governor: [+ estates_tridam_governor +] ([+ estates_tridam_gov_allegiance +])
 
 **Ghelibol**
 
-Crown control: [+ gelibol_cont: control +]
+Crown control: [+ estates_gelibol_cont: control +]
 
-Governor: [+ gelibol_gov +] ([+ gelibol_gov_allegiance +])
+Governor: [+ estates_gelibol_governor +] ([+ estates_gelibol_gov_allegiance +])
 
 </div>
