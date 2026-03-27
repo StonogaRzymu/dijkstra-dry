@@ -329,7 +329,45 @@ Current efficacy: [+ taxes_tolls_eff : tax_eff +]
 
 @increase_tax
 title: Increase tax rate
-on-arrival: {! Q.taxes[Q.tax_changed].rate += 0.1 !}
+on-arrival: {!
+    Q.taxes[Q.tax_changed].rate += 0.1
+    
+    Q.budget_balance = 0
+
+    Object.entries(Q.taxes).forEach((tax_obj) => {
+        let tax = tax_obj[1]
+        if (tax.active && (tax.id == Q.tax_changed)) {
+            let base = 0;
+            Object.entries(Q.provinces).forEach((prov_obj) => {
+                let prov = prov_obj[1]
+                if (tax.metrics.includes("pop")){
+                    base += prov.pop * prov.control
+                }
+                if (tax.metrics.includes("land")){
+                    base += prov.land * prov.control
+                }
+                if (tax.metrics.includes("wealth")){
+                    base += prov.wealth * prov.control
+                }
+                if (tax.metrics.includes("trade")){
+                    base += prov.trade * prov.control
+                }
+                if (tax.metrics.includes("novigrad_trade") && ("novigrad_trade" in prov)){
+                    base += prov.novigrad_trade * prov.control
+                }
+            })
+            base /= tax.metrics.length  
+            rev = Math.round(base * tax.base * tax.rate * tax.eff) / 100
+
+            Q.taxes[tax_obj[0]].rev = rev
+
+            Q.budget_balance += rev
+
+        }
+    });
+
+    Q.budget_balance = Math.round(Q.budget_balance * 10) / 10;
+!}
 new-page: true
 go-to: change_taxes
 
@@ -337,7 +375,45 @@ go-to: change_taxes
 
 @decrease_tax
 title: Decrease tax rate
-on-arrival: {! Q.taxes[Q.tax_changed].rate -= 0.1 !}
+on-arrival: {!
+    Q.taxes[Q.tax_changed].rate -= 0.1
+    
+    Q.budget_balance = 0
+
+    Object.entries(Q.taxes).forEach((tax_obj) => {
+        let tax = tax_obj[1]
+        if (tax.active && (tax.id == Q.tax_changed)) {
+            let base = 0;
+            Object.entries(Q.provinces).forEach((prov_obj) => {
+                let prov = prov_obj[1]
+                if (tax.metrics.includes("pop")){
+                    base += prov.pop * prov.control
+                }
+                if (tax.metrics.includes("land")){
+                    base += prov.land * prov.control
+                }
+                if (tax.metrics.includes("wealth")){
+                    base += prov.wealth * prov.control
+                }
+                if (tax.metrics.includes("trade")){
+                    base += prov.trade * prov.control
+                }
+                if (tax.metrics.includes("novigrad_trade") && ("novigrad_trade" in prov)){
+                    base += prov.novigrad_trade * prov.control
+                }
+            })
+            base /= tax.metrics.length  
+            rev = Math.round(base * tax.base * tax.rate * tax.eff) / 100
+
+            Q.taxes[tax_obj[0]].rev = rev
+
+            Q.budget_balance += rev
+
+        }
+    });
+    
+    Q.budget_balance = Math.round(Q.budget_balance * 10) / 10;
+!}
 new-page: true
 go-to: change_taxes
 
