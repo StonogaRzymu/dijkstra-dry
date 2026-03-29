@@ -13,8 +13,6 @@
     ui = dendryUI;
     game = ui.game;
 
-    window.dendryUI.dendryEngine.state.qualities.initiated = false;
-
     // Add your custom code here.
   };
 
@@ -300,6 +298,7 @@
   window.dendryModifyUI = main;
   window.statusTab = "status";
   console.log("Modifying stats: see dendryUI.dendryEngine.state.qualities");
+    window.dendryUI.dendryEngine.state.qualities.initiated = false;
 
   window.onload = function() {
     window.dendryUI.loadSettings();
