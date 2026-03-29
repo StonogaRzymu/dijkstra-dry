@@ -19,7 +19,19 @@ Q.estates = {
     pettynobility: {},
     guilds: {},
     church: {},
-    peasants: {}
+    peasants: {},
+    addAll: function(prop, val) {
+        Object.entries(this).forEach((item) => {
+            item[1][prop] += val
+        })
+    },
+    addSome: function(items, prop, val) {
+        Object.entries(this).forEach((item) => {
+            if (items.includes(item[0])) {
+                item[1][prop] += val
+            }
+        })
+    }
 };
 
 Q.estates["aristocracy"].inf    = 40;
@@ -41,7 +53,19 @@ Q.provinces = {
     uppred: {},
     coast: {},
     tridam: {},
-    gelibol: {}
+    gelibol: {},
+    addAll: function(prop, val) {
+        Object.entries(this).forEach((item) => {
+            item[1][prop] += val
+        })
+    },
+    addSome: function(items, prop, val) {
+        Object.entries(this).forEach((item) => {
+            if (items.includes(item[0])) {
+                item[1][prop] += val
+            }
+        })
+    }
 };
 
 Q.provinces["lowred"].control = 0.50
