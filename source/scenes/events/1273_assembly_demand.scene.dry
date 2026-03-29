@@ -29,8 +29,8 @@ go-to: assembly_set_date
 Title: Assembly will gather this year
 subtitle: Assembly will gather this year
 on-arrival: {! 
-Q.next_assembly_season = season + 1;
-Q.next_assembly_year = year;
+Q.next_assembly_season = Q.season + 1;
+Q.next_assembly_year = Q.year;
 Q.assembly_called = 1
 !}
 
