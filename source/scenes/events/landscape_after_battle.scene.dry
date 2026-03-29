@@ -1,5 +1,7 @@
 Title: Landscape after the battle
 new-page: true
+view-if: year = 1273 and season = 1
+max-visits: 1
 tags: event
 
 = Landscape after the battle
@@ -24,4 +26,4 @@ Current goals:
 
 – replace royal tithe with secular taxation
 
-- @main: Continue
+- @main: We will succeed, one way or another
