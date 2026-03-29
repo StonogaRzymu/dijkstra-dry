@@ -17,7 +17,7 @@ The currently proposed Assembly would be meant to formally recognise count Dijks
 @assembly_set_date
 Title: Set the date of the next Assembly of the Realm
 
-When should the Assembly gather? Calling it to meet this summer is what the estates expect and would solve some issues right away. On the other hand we can delay it and call it to gather the next year, which would give us some time to prepare for this. This will annoy them, though.
+When should the Assembly gather? Calling it to meet this autumn is what the estates expect and would solve some issues right away. On the other hand we can delay it and call it to gather the next year, which would give us some time to prepare for this. This will annoy them, though.
 
 - @assembly_set_1273: The sooner, the better
 - @assembly_set_1274: It's better to wait
@@ -28,7 +28,7 @@ go-to: assembly_set_date
 @assembly_set_1273
 Title: Assembly will gather this year
 subtitle: Assembly will gather this year
-on-arrival: next_assembly_season = season + 1; next_assembly_year = year
+on-arrival: next_assembly_season = season + 1; next_assembly_year = year; assembly_called = 1
 
 The Assembly of the Realm will gather in the [+ next_assembly_season : season +] of [+ next_assembly_year +] on the fields outside of Tretogor.
 
@@ -37,7 +37,7 @@ The estates are happy that we agreed so easily.
 @assembly_set_1274
 Title: Assembly will gather next year
 subtitle: Assembly will gather next year
-on-arrival: next_assembly_season = season; next_assembly_year = year + 1
+on-arrival: next_assembly_season = season; next_assembly_year = year + 1; assembly_called = 1
 
 The Assembly of the Realm will gather in the [+ next_assembly_season : season +] of [+ next_assembly_year +] on the fields outside of Tretogor.
 
