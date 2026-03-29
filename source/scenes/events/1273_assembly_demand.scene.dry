@@ -29,8 +29,8 @@ go-to: assembly_set_date
 Title: Assembly will gather this year
 subtitle: Assembly will gather this year
 on-arrival: {! 
-Q.next_assembly_season = Q.season + 1;
-Q.next_assembly_year = Q.year;
+Q.next_assembly_season = 3;
+Q.next_assembly_year = 1273;
 Q.assembly_called = 1
 !}
 
@@ -41,7 +41,7 @@ The estates are happy that we agreed so easily.
 @assembly_set_1274
 Title: Assembly will gather next year
 subtitle: Assembly will gather next year
-on-arrival: next_assembly_season = season; next_assembly_year = year + 1; assembly_called = 1
+on-arrival: next_assembly_season = 1; next_assembly_year = 1274; assembly_called = 1
 
 The Assembly of the Realm will gather in the [+ next_assembly_season : season +] of [+ next_assembly_year +] on the fields outside of Tretogor.
 
