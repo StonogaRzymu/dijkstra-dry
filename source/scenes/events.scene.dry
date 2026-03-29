@@ -13,7 +13,6 @@ if (choices && choices[0].title != "Continue...") {
 }
 
 !}
-
 go-to: events_choice if has_event = 1; main if has_event = 0
 
 @events_choice
