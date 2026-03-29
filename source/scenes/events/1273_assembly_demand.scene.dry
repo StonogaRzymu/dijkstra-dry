@@ -32,7 +32,7 @@ on-arrival: {!
 Q.next_assembly_season = 3;
 Q.next_assembly_year = 1273;
 Q.assembly_called = 1;
-Q.estates.addSome(["aristocracy", "pettynobility", "church", "guilds"], "sat", 10); 
+Q.estates.addSome(Q.assembly_participants, "sat", 10); 
 !}
 
 The Assembly of the Realm will gather in the [+ next_assembly_season : season +] of [+ next_assembly_year +] on the fields outside of Tretogor.
@@ -46,7 +46,7 @@ on-arrival: {!
 Q.next_assembly_season = 1;
 Q.next_assembly_year = 1274;
 Q.assembly_called = 1;
-Q.estates.addSome(["aristocracy", "pettynobility", "church", "guilds"], "sat", 5);
+Q.estates.addSome(Q.assembly_participants, "sat", 5);
 !}
 
 The Assembly of the Realm will gather in the [+ next_assembly_season : season +] of [+ next_assembly_year +] on the fields outside of Tretogor.
