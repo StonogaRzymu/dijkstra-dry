@@ -13,8 +13,9 @@ new-page: true
 </table>
 
 - @standing_army
-- @banners
 - @navy
+- @raise_banners
+- @dismiss_banners
 - @dijkstra: Back
 
 @standing_army
@@ -40,40 +41,103 @@ new-page: true
 title: Train new regiment
 subtitle: Cost: [+ mil_standing_cost +]&nbsp;thousand crowns
 on-arrival: {!
-Q.mil["standing"].units += 1
-Q.mil["standing"].fullupkeep = Q.mil["standing"].units * Q.mil["standing"].upkeep
-Q.mil_standing_units += 1
-Q.mil_standing_fullupkeep = Q.mil["standing"].units * Q.mil["standing"].upkeep
-Q.budget -= Q.mil["standing"].cost
-Q.budget_balance -= Q.mil["standing"].upkeep
+    Q.mil["standing"].units += 1
+    Q.mil["standing"].fullupkeep = Q.mil["standing"].units * Q.mil["standing"].upkeep
+    Q.mil_standing_units += 1
+    Q.mil_standing_fullupkeep = Q.mil["standing"].units * Q.mil["standing"].upkeep
+    Q.budget -= Q.mil["standing"].cost
+    Q.budget_balance -= Q.mil["standing"].upkeep
 !}
 go-to: standing_army
 
 @disband_regiments
 title: Disband existing regiment
 on-arrival: {!
-Q.mil["standing"].units -= 1
-Q.mil["standing"].fullupkeep = Q.mil["standing"].units * Q.mil["standing"].upkeep
-Q.mil_standing_units -= 1
-Q.mil_standing_fullupkeep = Q.mil["standing"].units * Q.mil["standing"].upkeep
-Q.budget_balance += Q.mil["standing"].upkeep
+    Q.mil["standing"].units -= 1
+    Q.mil["standing"].fullupkeep = Q.mil["standing"].units * Q.mil["standing"].upkeep
+    Q.mil_standing_units -= 1
+    Q.mil_standing_fullupkeep = Q.mil["standing"].units * Q.mil["standing"].upkeep
+    Q.budget_balance += Q.mil["standing"].upkeep
 !}
 go-to: standing_army
 
-@banners
-title: Manage banners
+@raise_banners
+title: Raise banners!
+subtitle: Expected upkeep: [+ mil_banners_fullupkeep +]&nbsp;thousand crowns
+view-if: mil_banners_raised = 0
+on-arrival: {!
+    Q.mil.banners.raised = 1
+    Q.mil_banners_raised = 1
+    Q.mil.banners.fullupkeep = Q.mil["banners"].units * Q.mil["banners"].upkeep
+    Q.mil_banners_fullupkeep = Q.mil["banners"].units * Q.mil["banners"].upkeep
+    Q.budget_balance -= Q.mil["banners"].fullupkeep
+!}
+go-to: armed_forces
 
-# - @raise_banners
-# - @dismiss_banners
-- @armed_forces: Back
-
-# @raise_banners
-# title: Raise banners!
+@dismiss_banners
+title: Dismiss banners!
+view-if: mil_banners_raised = 1
+on-arrival: {!
+    Q.mil.banners.raised = 1
+    Q.mil_banners_raised = 1
+    Q.mil.banners.fullupkeep = Q.mil["banners"].units * Q.mil["banners"].upkeep
+    Q.mil_banners_fullupkeep = Q.mil["banners"].units * Q.mil["banners"].upkeep
+    Q.budget_balance -= Q.mil["banners"].fullupkeep
+!}
+go-to: armed_forces
 
 @navy
 title: Manage navy
+new-page: true
 
-# - @commission_ships
-# - @commandeer_ships
-# - @scuttle_ships
+= Armed forces
+
+<table>
+<tr><td>Standing army:</td><td style="table-value">[+ mil_standing_units +]&nbsp;regiments</td></tr>
+<tr><td></td><td><small>[+ mil_standing_fullupkeep +]&nbsp;thousand crowns</small></td></tr>
+<tr><td>Feudal banners:</td><td style="table-value">[+ mil_banners_units +]&nbsp;banners</td></tr>
+<tr><td><small>[? if mil_banners_raised == 1 : raised ?][? if mil_banners_raised = 0 : not raised ?]</small></td><td><small>[+ mil_banners_fullupkeep +]&nbsp;thousand crowns</small></td></tr>
+<tr><td>Navy:</td><td style="table-value">[+ mil_navy_units +]&nbsp;ships</td></tr>
+<tr><td></td><td><small>[+ mil_navy_fullupkeep +]&nbsp;thousand crowns</small></td></tr>
+</table>
+
+- @commission_ships
+- @commandeer_ships
+- @scuttle_ships
 - @armed_forces: Back
+
+@commission_ships
+title: Commision new ship
+subtitle: Cost: [+ mil_navy_cost +]&nbsp;thousand crowns
+on-arrival: {!
+    Q.mil["navy"].units += 1
+    Q.mil["navy"].fullupkeep = Q.mil["navy"].units * Q.mil["navy"].upkeep
+    Q.mil_navy_units += 1
+    Q.mil_navy_fullupkeep = Q.mil["navy"].units * Q.mil["navy"].upkeep
+    Q.budget -= Q.mil["navy"].cost
+    Q.budget_balance -= Q.mil["navy"].upkeep
+!}
+go-to: navy
+
+@commandeer_ships
+title: Commandeer ships
+subtitle: This will anger the merchants!
+on-arrival: {!
+    Q.mil["navy"].units += 5
+    Q.mil["navy"].fullupkeep = Q.mil["navy"].units * Q.mil["navy"].upkeep
+    Q.mil_navy_units += 5
+    Q.mil_navy_fullupkeep = Q.mil["navy"].units * Q.mil["navy"].upkeep
+    Q.budget_balance -= 5 * Q.mil["navy"].upkeep
+!}
+go-to: navy
+
+@scuttle_ships
+title: Scuttle one of our ships
+on-arrival: {!
+    Q.mil["navy"].units -= 1
+    Q.mil["navy"].fullupkeep = Q.mil["navy"].units * Q.mil["navy"].upkeep
+    Q.mil_navy_units -= 1
+    Q.mil_navy_fullupkeep = Q.mil["navy"].units * Q.mil["navy"].upkeep
+    Q.budget_balance += Q.mil["navy"].upkeep
+!}
+go-to: navy
