@@ -1,6 +1,9 @@
 title: Create Civil Service
 new-page: true
+view-if: cs_created = 0
+choose-if: admin >= 25
 subtitle: Requires enormous bureaucratic effort
+unavailable-subtitle: Requires enormous bureaucratic effort
 on-arrival: cs_created = 1; admin -= 25
 go-to: cs_hiring
 
