@@ -17,6 +17,8 @@ Q.timers_list.forEach((timer) => {
     Object.defineProperty(Q, timer, {value: 0, configurable: true })
 })
 
+Q.mini_actions = 0
+
 Q.budget = 10;
 Q.budget_balance = 0;
 
@@ -32,8 +34,16 @@ Q.cs_salaries = 0;
 Q.cs_skill = 0;
 Q.cs_net_width = 0;
 Q.cs_loyalty = 0;
-Q.cs_clerical_influence = 0;
 Q.cs_size = 0;
+Q.cs_hire_gold = 0;
+Q.cs_hire_admin = 0;
+
+Q.cs_hire_alumni = 0;
+Q.cs_hire_nobles = 0;
+Q.cs_hire_church = 0;
+Q.cs_hire_cities = 0;
+Q.cs_hire_soldiers = 0;
+
 Q.cs_minister = ""
 Q.cs_upkeep = Q.cs_size * (5 + Q.cs_salaries);
 Q.admin_cap = 25 + Q.cs_size * (10 + 5 * Q.cs_skill);

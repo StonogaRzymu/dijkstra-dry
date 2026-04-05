@@ -2,8 +2,8 @@ title: Create Civil Service
 new-page: true
 view-if: cs_created = 0
 choose-if: admin >= 25
-subtitle: Requires enormous bureaucratic effort
-unavailable-subtitle: Requires enormous bureaucratic effort
+subtitle: Requires enormous administrative effort
+unavailable-subtitle: Requires enormous administrative effort
 on-arrival: cs_created = 1; admin -= 25
 go-to: cs_hiring
 
@@ -29,7 +29,7 @@ title: Civil Service - hiring
 @cs_hire_alumni
 title: Civil Service - hiring
 subtitle: This will increase opportunities for hiring and increase skills of our bureaucrats
-on-arrival: cs_net_width += 1; cs_skill += 1
+on-arrival: cs_net_width += 1; cs_skill += 1; cs_hire_alumni = 1; cs_hire_admin += 5
 max-visits: 1
 go-to: cs_hiring
 
@@ -41,6 +41,7 @@ subtitle: This will increase opportunities for hiring, but decrease skills of ou
 on-arrival: {!
     Q.cs_net_width += 1;
     Q.cs_skill -= 1;
+    Q.cs_hire_nobles = 1
     Q.estates.aristocracy.inf += 3
     Q.estates.aristocracy.sat += 3
     Q.estates.pettynobility.inf += 3
@@ -57,7 +58,7 @@ subtitle: This will increase opportunities for hiring and skills of our bureaucr
 on-arrival: {!
     Q.cs_net_width += 1;
     Q.cs_skill += 1;
-    Q.cs_clerical_influence = 1;
+    Q.cs_hire_church = 1;
     Q.cs_loyalty -= 1;
     Q.estates.church.inf += 3;
     Q.estates.church.sat += 3
@@ -73,6 +74,7 @@ subtitle: This will increase opportunities for hiring, but slightly increase sal
 on-arrival: {!
     Q.cs_net_width += 1;
     Q.cs_salaries += 0.5;
+    Q.cs_hire_cities = 1
     Q.estates.guilds.inf += 3;
     Q.estates.guilds.sat += 3
 !}
@@ -86,7 +88,9 @@ title: Civil Service - hiring
 subtitle: This will increase opportunities for hiring, but nobility will be offended by including such rabble in our administration.
 on-arrival: {!
     Q.cs_net_width += 1;
+    Q.cs_hire_admin += 5;
     Q.cs_loyalty += 1
+    Q.cs_hire_soldiers = 1
     Q.estates.aristocracy.sat -= 6
     Q.estates.pettynobility.sat -= 6
     Q.estates.peasants.sat += 3
@@ -117,7 +121,7 @@ How much are ready to pay them?
 @cs_high_salaries
 title: Civil Service - salaries
 subtitle: This will slightly increase opportunities for hiring and skills of our bureaucrats
-on-arrival: cs_salaries += 1; cs_net_width += 0.5; cs_skill += 0.5; cs_loyalty += 0.5
+on-arrival: cs_salaries += 1; cs_net_width += 1; cs_skill += 0.5; cs_loyalty += 0.5
 go-to: cs_choose_minister
 
 We will introduce high salaries
@@ -132,7 +136,7 @@ We will introduce medium salaries
 @cs_low_salaries
 title: Civil Service - salaries
 subtitle: This will slightly decrease opportunities for hiring and skills of our bureaucrats
-on-arrival: cs_salaries -= 1; cs_net_width -= 0.5; cs_skill -= 0.5; cs_loyalty -= 0.5
+on-arrival: cs_salaries -= 1; cs_net_width -= 1; cs_skill -= 0.5; cs_loyalty -= 0.5
 go-to: cs_choose_minister
 
 We will introduce low salaries
@@ -178,7 +182,9 @@ go-to: cs_create_finish
 @cs_create_finish
 title: Civil Service - created
 on-arrival: {!
-    Q.cs_upkeep = Q.cs_size * (5 + Q.cs_salaries);
+    Q.cs_upkeep = Q.cs_size * (2 + Q.cs_salaries);
+    Q.cs_hire_gold = 2 * (2 + Q.cs_salaries);
+    Q.cs_hire_admin = 
     Q.budget_balance -= Q.cs_upkeep;
     Q.admin_cap = 25 + Q.cs_size * (10 + 5 * Q.cs_skill)
 !}
