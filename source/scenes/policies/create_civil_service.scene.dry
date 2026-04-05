@@ -184,7 +184,6 @@ title: Civil Service - created
 on-arrival: {!
     Q.cs_upkeep = Q.cs_size * (2 + Q.cs_salaries);
     Q.cs_hire_gold = 2 * (2 + Q.cs_salaries);
-    Q.cs_hire_admin = 
     Q.budget_balance -= Q.cs_upkeep;
     Q.admin_cap = 25 + Q.cs_size * (10 + 5 * Q.cs_skill)
 !}

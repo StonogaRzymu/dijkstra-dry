@@ -4,7 +4,7 @@ is-card: true
 card-image: img/bureaucracy.jpg
 tags: internal_affairs
 view-if: cs_created = 1 and bureaucracy_expansion_timer = 0
-on-arrival: bureaucracy_expansion_timer = (6 - cs_net_width) and mini_actions = 0
+on-arrival: bureaucracy_expansion_timer = (6 - cs_net_width); mini_actions = 0
 go-to: cs_expansion_choices
 
 = Bureaucracy Expansion
@@ -27,7 +27,7 @@ Our efforts to create Civil Service and hire competent clerks and bureaucrats ha
 @cs_hire_as_usual
 subtitle: Cost: [+ cs_hire_gold +] thousand crowns. Requires [+ cs_hire_admin : effort +] administrative effort
 choose-if: budget >= cs_hire_gold and admin >= cs_hire_admin
-on-arrival: cs_size += 1; budget -= cs_hire_gold; admin -= cs_hire_admin
+on-arrival: cs_size += 1; budget -= cs_hire_gold; admin -= cs_hire_admin; cs_upkeep = cs_size * (2 + cs_salaries); budget_balance -= cs_upkeep; admin_cap = 25 + cs_size * (10 + 5 * cs_skill)
 
 Our Civil Service expands. This will help our agenda.
 
@@ -105,6 +105,7 @@ view-if: cs_hire_cities = 0 and mini_actions = 0
 on-arrival: {!
     Q.cs_net_width += 1;
     Q.cs_salaries += 0.5;
+    Q.cs_hire_gold = 2 * (2 + Q.cs_salaries);
     Q.cs_hire_cities = 1
     Q.estates.guilds.inf += 3;
     Q.estates.guilds.sat += 3
@@ -120,6 +121,7 @@ view-if: cs_hire_cities = 1 and mini_actions = 0
 on-arrival: {!
     Q.cs_net_width -= 1;
     Q.cs_salaries -= 0.5;
+    Q.cs_hire_gold = 2 * (2 + Q.cs_salaries);
     Q.cs_hire_cities = 0
     Q.estates.guilds.inf -= 2;
     Q.estates.guilds.sat -= 6
