@@ -5,6 +5,18 @@ Q.time = 0;
 Q.year = 1272;
 Q.season = 4;
 
+// define timer properties for Q from this pretty array
+
+Q.timers_list = [
+    'bureaucracy_expansion_timer',
+    'racial_unrest_timer',
+    'ng_envoy_timer'
+]
+
+Q.timers_list.forEach((timer) => {
+    Object.defineProperty(Q, timer, {value: 0, configurable: true })
+})
+
 Q.budget = 10;
 Q.budget_balance = 0;
 

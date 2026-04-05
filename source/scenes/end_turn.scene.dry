@@ -12,6 +12,12 @@ if (Q.season < 4) {
     Q.year += 1;
 }
 
+// decrease timers
+
+Q.timers_list.forEach((timer) => {
+    Q[timer] -= 1
+})
+
 Q.admin = Q.admin_cap
 
 // evaluate income and financial reserves
