@@ -12,7 +12,7 @@ Broy is former intelligence operative and one of Dijkstra's stalwart loyalists.
 
 As a Minister of Civil service he enforces bureaucracy's loyalty and fosters cooperation with Special Service
 
-- cs_hiring
+- cs_hiring_change
 - cs_start_expansion
 - cs_stop_expansion
 - @main: Back
@@ -31,7 +31,7 @@ Count van der Heuvel is a seasoned bureaucrat whose career remembers times of Vi
 
 As a Minister of Civil Service he allows as to compromise with aristocracy to achieve some of our goals 
 
-- cs_hiring
+- cs_hiring_change
 - cs_start_expansion
 - cs_stop_expansion
 - @main: Back
@@ -48,7 +48,7 @@ Otto Carels is a radical, who as a chief judge of Roggeveen tried to use city au
 
 As a Minister of Civil Service he leads a crusade against racism and superstition in our state.
 
-- cs_hiring
+- cs_hiring_change
 - cs_start_expansion
 - cs_stop_expansion
 - @main: Back
@@ -63,7 +63,7 @@ title: Expansion of Civil Service has
 view-if: cs_expansion = 1
 on-arrival: cs_expansion = 0
 
-@cs_hiring
+@cs_hiring_change
 title: Change hiring practices
 
 - @cs_add_nobles: We should offer post to various nobles
@@ -89,7 +89,7 @@ on-arrival: {!
     Q.estates.pettynobility.sat += 3
     Q.mini_actions += 1
 !}
-go-to: cs_expansion_choices
+go-to: cs_hiring_change
 
 We will offer posts to second and third sons of various nobles. What they lack in education they make up in inherited virtue
 
@@ -106,7 +106,7 @@ on-arrival: {!
     Q.estates.pettynobility.sat -= 6
     Q.mini_actions += 1
 !}
-go-to: cs_expansion_choices
+go-to: cs_hiring_change
 
 We shouldn't pretend noble birth makes someone good bureaucrat 
 
@@ -122,7 +122,7 @@ on-arrival: {!
     Q.estates.church.sat += 3
     Q.mini_actions += 1
 !}
-go-to: cs_expansion_choices
+go-to: cs_hiring_change
 
 We will include priests and monks of Eternal Fire in the new apparatus. What they lack in loyalty they make up in piety
 
@@ -138,7 +138,7 @@ on-arrival: {!
     Q.estates.church.sat -= 6
     Q.mini_actions += 1
 !}
-go-to: cs_expansion_choices
+go-to: cs_hiring_change
 
 We should get rid of the Eternal Fire clergy in our Civil Service. 
 
@@ -154,7 +154,7 @@ on-arrival: {!
     Q.estates.guilds.sat += 3
     Q.mini_actions += 1
 !}
-go-to: cs_expansion_choices
+go-to: cs_hiring_change
 
 We will make a deal with bourgeoisie to hire some of their clerks. We will have to pay extra for it
 
@@ -170,7 +170,7 @@ on-arrival: {!
     Q.estates.guilds.sat -= 6
     Q.mini_actions += 1
 !}
-go-to: cs_expansion_choices
+go-to: cs_hiring_change
 
 We won't pay extra for hiring officials from cities and guilds any longer 
 
@@ -187,7 +187,7 @@ on-arrival: {!
     Q.estates.peasants.sat += 3
     Q.mini_actions += 1
 !}
-go-to: cs_expansion_choices
+go-to: cs_hiring_change
 
 We will recruit best and brightest veterans of the War, regardless of their birth 
 
@@ -204,7 +204,7 @@ on-arrival: {!
     Q.estates.peasants.sat -= 6
     Q.mini_actions += 1
 !}
-go-to: cs_expansion_choices
+go-to: cs_hiring_change
 
 We don't need rabble among our officials
 
