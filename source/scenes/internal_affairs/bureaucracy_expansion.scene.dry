@@ -3,7 +3,7 @@ new-page: true
 is-card: true
 card-image: img/bureaucracy.jpg
 tags: internal_affairs
-view-if: cs_expansion = 1 and bureaucracy_expansion_timer = 0
+view-if: cs_expansion == 1 and bureaucracy_expansion_timer == 0
 on-arrival: {!
     Q.bureaucracy_expansion_timer = 6 - Q.cs_net_width;
     console.log("Timer: "+Q.bureaucracy_expansion_timer)

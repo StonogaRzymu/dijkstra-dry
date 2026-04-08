@@ -9,7 +9,7 @@ go-to: cs_ministry_menu
 
 = Eliezer Broy
 
-Broy is former intelligence operative and one of Dijkstra's stalwart loyalists.
+Broy is one of Dijkstra's stalwart loyalists who helped him build and manage his private intelligence network.
 
 As a Minister of Civil service he enforces bureaucracy's loyalty and fosters cooperation with Special Service
 
@@ -36,6 +36,8 @@ tags: cabinet
 card-image: img/carels.jpg
 new-page: true
 go-to: cs_ministry_menu
+
+= Otto Carels
 
 Otto Carels is a radical, who as a chief judge of Roggeveen tried to use city autonomy to protect victims of persecutions.
 
