@@ -5,17 +5,13 @@ view-if: cs_created = 1 and cs_minister = "Eliezer Broy"
 tags: cabinet
 card-image: img/broy.jpg
 new-page: true
+go-to: cs_ministry_menu
 
 = Eliezer Broy
 
 Broy is former intelligence operative and one of Dijkstra's stalwart loyalists.
 
 As a Minister of Civil service he enforces bureaucracy's loyalty and fosters cooperation with Special Service
-
-- @cs_hiring_change
-- @cs_start_expansion
-- @cs_stop_expansion
-- @main: Back
 
 @heuvel
 title: Ferdinand van der Heuvel
@@ -24,17 +20,13 @@ view-if: cs_created = 1 and cs_minister = "Ferdinand van der Heuvel"
 tags: cabinet
 card-image: img/heuvel.jpg
 new-page: true
+go-to: cs_ministry_menu
 
 = Count Ferdinand van der Heuvel
 
 Count van der Heuvel is a seasoned bureaucrat whose career remembers times of Vizimir II the Just.
 
 As a Minister of Civil Service he allows as to compromise with aristocracy to achieve some of our goals 
-
-- @cs_hiring_change
-- @cs_start_expansion
-- @cs_stop_expansion
-- @main: Back
 
 @carels
 title: Otto Carels
@@ -43,10 +35,13 @@ view-if: cs_created = 1 and cs_minister = "Otto Carels"
 tags: cabinet
 card-image: img/carels.jpg
 new-page: true
+go-to: cs_ministry_menu
 
 Otto Carels is a radical, who as a chief judge of Roggeveen tried to use city autonomy to protect victims of persecutions.
 
 As a Minister of Civil Service he leads a crusade against racism and superstition in our state.
+
+@cs_ministry_menu
 
 - @cs_hiring_change
 - @cs_start_expansion
@@ -57,7 +52,7 @@ As a Minister of Civil Service he leads a crusade against racism and superstitio
 title: Continue expansion of Civil Service
 view-if: cs_expansion = 0
 on-arrival: cs_expansion = 1
-go-to: broy if cs_minister = "Eliezer Broy"; heuvel if cs_minister = "Ferdinand van der Heuvel"; carels if cs_minister = "Otto Carels"
+go-to: cs_ministry_menu
 
 Orders will be send to all offices of Civil Service to renew hiring efforts.
 
@@ -65,7 +60,7 @@ Orders will be send to all offices of Civil Service to renew hiring efforts.
 title: Stop expansion of Civil Service
 view-if: cs_expansion = 1
 on-arrival: cs_expansion = 0
-go-to: broy if cs_minister = "Eliezer Broy"; heuvel if cs_minister = "Ferdinand van der Heuvel"; carels if cs_minister = "Otto Carels"
+go-to: cs_ministry_menu
 
 Orders will be send to all offices of Civil Service to halt further hiring efforts, at least for now.
 
@@ -80,9 +75,7 @@ title: Change hiring practices
 - @cs_remove_cities: We won't pay extra for officials from cities and guilds any longer 
 - @cs_add_soldiers: We should look amongst low-rank soldiers for ones with organisation skills
 - @cs_remove_soldiers: We don't need rabble among our officials
-- @broy: Back
-- @heuvel: Back
-- @carels: Back
+- @cs_ministry_menu: Back
 
 @cs_add_nobles
 subtitle: This will increase opportunities for hiring, but decrease skills of our bureaucrats. Nobility will gain influence and satisfaction
