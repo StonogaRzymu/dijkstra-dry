@@ -8,6 +8,7 @@ max-cards: 3
 
 - @internal
 - @foreign
+- @dijkstra
 - #cabinet
 - @end_turn
 
