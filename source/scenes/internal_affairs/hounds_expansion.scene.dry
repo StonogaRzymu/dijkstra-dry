@@ -1,0 +1,35 @@
+title: Expansion of Redanian Hounds
+new-page: true
+is-card: true
+card-image: img/hounds.jpg
+tags: internal_affairs
+view-if: sec_hounds_level >= 1 and hounds_expansion_timer == 0
+on-arrival: hounds_expansion_timer = sec_hounds_cooldown
+
+- @hounds_expand_full: Finance wide expansion of Royal Yeomanry
+- @hounds_expand_partial: Finance limited, less costly expansion of Royal Yeomanry
+- @return
+
+@hounds_expand_full
+choose-if: admin >= sec_hounds_expand
+subtitle: Requires [+ sec_hounds_expand : effort +] bureaucratic effort
+unavailable-subtitle: Requires [+ sec_hounds_expand : effort +] bureaucratic effort!
+on-arrival: {!
+    Q.sec.hounds.level += 1
+    Q.sec_hounds_level += 1
+    Q.admin -= Q.sec_hounds_expand
+!}
+
+- @main: Continue...
+
+@hounds_expand_partial
+choose-if: admin >= sec_hounds_expand/2
+subtitle: Requires [+ sec_hounds_expand / 2 : effort +] bureaucratic effort
+unavailable-subtitle: Requires [+ sec_hounds_expand / 2 : effort +] bureaucratic effort!
+on-arrival: {!
+    Q.sec.hounds.level += 0.5
+    Q.sec_hounds_level += 0.5
+    Q.admin -= Q.sec_hounds_expand/2
+!}
+
+- @main: Continue...

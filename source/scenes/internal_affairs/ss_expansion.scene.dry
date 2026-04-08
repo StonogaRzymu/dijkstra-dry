@@ -1,0 +1,35 @@
+title: Special Service Expansion
+new-page: true
+is-card: true
+card-image: img/secret_service.jpg
+tags: internal_affairs
+view-if: sec_ss_level >= 1 and ss_expansion_timer == 0
+on-arrival: ss_expansion_timer = sec_ss_cooldown
+
+- @ss_expand_full: Finance wide expansion of Special Service
+- @ss_expand_partial: Finance limited, less costly expansion of Special Service
+- @return
+
+@ss_expand_full
+choose-if: admin >= sec_ss_expand
+subtitle: Requires [+ sec_ss_expand : effort +] bureaucratic effort
+unavailable-subtitle: Requires [+ sec_ss_expand : effort +] bureaucratic effort!
+on-arrival: {!
+    Q.sec.ss.level += 1
+    Q.sec_ss_level += 1
+    Q.admin -= Q.sec_ss_expand
+!}
+
+- @main: Continue...
+
+@ss_expand_partial
+choose-if: admin >= sec_ss_expand/2
+subtitle: Requires [+ sec_ss_expand / 2 : effort +] bureaucratic effort
+unavailable-subtitle: Requires [+ sec_ss_expand / 2 : effort +] bureaucratic effort!
+on-arrival: {!
+    Q.sec.ss.level += 0.5
+    Q.sec_ss_level += 0.5
+    Q.admin -= Q.sec_ss_expand/2
+!}
+
+- @main: Continue...

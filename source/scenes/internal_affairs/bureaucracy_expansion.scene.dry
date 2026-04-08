@@ -24,7 +24,7 @@ Our Civil Service expands. This will help our agenda.
 - @main: Continue...
 
 @cs_hire_partial
-subtitle: Cost: [+ cs_hire_gold/2 +] thousand crowns. Requires [+ cs_hire_admin/2 : effort +] administrative effort
+subtitle: Cost: [+ cs_hire_gold / 2 +] thousand crowns. Requires [+ cs_hire_admin / 2 : effort +] administrative effort
 choose-if: budget >= (cs_hire_gold/2) and admin >= (cs_hire_admin/2)
 on-arrival: cs_size += 0.5; budget -= cs_hire_gold/2; admin -= cs_hire_admin/2; cs_upkeep = cs_size * (2 + cs_salaries); budget_balance -= cs_upkeep; admin_cap = 25 + cs_size * (10 + 5 * cs_skill)
 
