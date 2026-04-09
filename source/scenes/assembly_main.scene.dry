@@ -1,0 +1,53 @@
+title: The Assembly of the Realm
+new-page: true
+# is-hand: true
+# max-cards: 3
+# is-pinned-card: true
+on-arrival: {!
+    Q.first_members = ['aristocracy', 'pettynobility']
+    Q.first_goodwill = ( (Q.estates['aristocracy'].sat - 50) * Q.estates['aristocracy'].inf + (Q.estates['pettynobility'].sat - 50) * Q.estates['pettynobility'].inf ) / (Q.estates['aristocracy'].inf + Q.estates['pettynobility'].inf)
+    Q.first_balance = Q.first_goodwill - Q.first_gains + Q.first_concessions
+    // Q.first_
+    
+    Q.second_members = ['church']
+    Q.second_goodwill = Q.estates['church'].sat - 50
+    Q.second_balance = Q.second_goodwill - Q.second_gains + Q.second_concessions
+    // Q.second_
+    
+    Q.third_members = ['guilds']
+    Q.third_goodwill = Q.estates['guilds'].sat - 50
+    Q.third_balance = Q.third_goodwill - Q.third_gains + Q.third_concessions
+    // Q.third_
+    
+!}
+
+= [+ assembly_name +]
+
+<table>
+<tr><th>Diets</th><th>Initial goodwill</th><th>Our gains</th><th>Our concessions</th><th>Balance</th></tr>
+<tr><th>First Estate</th><td>[+ first_goodwill +]</td><td>[+ first_gains +]</td><td>[+ first_concessions +]</td><td>[+ first_balance +]</td></tr>
+<tr><th>Second Estate</th><td>[+ second_goodwill +]</td><td>[+ second_gains +]</td><td>[+ second_concessions +]</td><td>[+ second_balance +]</td></tr>
+<tr><th>Third Estate</th><td>[+ third_goodwill +]</td><td>[+ third_gains +]</td><td>[+ third_concessions +]</td><td>[+ third_balance +]</td></tr>
+</table>
+
+- @assembly_gains
+- @assembly_concessions
+- @assembly_end
+
+@assembly_gains
+title: Ask estates to support our agenda
+subtitle: Costs 50 goodwill
+on-arrival: first_gains += 50; second_gains += 50; third_gains += 50
+go-to: assembly_main
+
+@assembly_concessions
+title: Offer concessions to the estates
+subtitle: Gives 20 goodwill
+on-arrival: first_concessions += 20; second_concessions += 20; third_concessions += 20
+go-to: assembly_main
+
+@assembly_end
+title: End the Assembly
+unavailable-subtitle: Each of the Diets must have positive balance of goodwill from gains and concessions
+choose-if: first_balance >= 0 and second_balance >= 0 and third_balance >= 0
+go-to: main

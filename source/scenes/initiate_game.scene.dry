@@ -26,6 +26,7 @@ Q.assembly_called = 0;
 Q.assembly_participants = ["aristocracy", "pettynobility", "church", "guilds"];
 Q.next_assembly_season = 0;
 Q.next_assembly_year = 0;
+Q.assembly_name = "Assembly of the Realm"
 
 // societal "values"
 

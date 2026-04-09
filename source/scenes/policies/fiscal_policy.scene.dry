@@ -6,7 +6,6 @@ Q.evaluateBalance();
 
 = Fiscal policy
 
-
 <table>
 <tr><th>Current taxes:</th></tr>
 [? if taxes_vassals_active == 1 : <tr><td style="table-label"> Feudal duties</td><td style="table-value"> [+ taxes_vassals_rev +]&nbsp;thousand crowns</td></tr> ?]
@@ -47,7 +46,7 @@ title: Adjust feudal duties
 subtitle: Current rates: [+ taxes_vassals_rate: tax_rates +]
 view-if: taxes_vassals_active = true
 on-arrival: {! Q.tax_changed = "vassals";
-Q.name = Q.taxes[Q.tax_changed].name.toUpperCase() !}
+Q.name = Q.taxes[Q.tax_changed].name !}
 new-page: true
 
 = [+ name +]
@@ -71,7 +70,7 @@ title: Adjust city duties
 subtitle: Current rates: [+ taxes_cities_rate: tax_rates +]
 view-if: taxes_cities_active = true
 on-arrival: {! Q.tax_changed = "cities";
-Q.name = Q.taxes[Q.tax_changed].name.toUpperCase() !}
+Q.name = Q.taxes[Q.tax_changed].name !}
 new-page: true
 
 = [+ name +]
@@ -95,7 +94,7 @@ title: Adjust poll tax
 subtitle: Current rates: [+ taxes_poll_rate: tax_rates +]
 view-if: taxes_poll_active = true
 on-arrival: {! Q.tax_changed = "poll";
-Q.name = Q.taxes[Q.tax_changed].name.toUpperCase() !}
+Q.name = Q.taxes[Q.tax_changed].name !}
 new-page: true
 
 = [+ name +]
@@ -119,7 +118,7 @@ title: Adjust land tax
 subtitle: Current rates: [+ taxes_land_rate: tax_rates +]
 view-if:taxes_land_active = true
 on-arrival: {! Q.tax_changed = "land";
-Q.name = Q.taxes[Q.tax_changed].name.toUpperCase() !}
+Q.name = Q.taxes[Q.tax_changed].name !}
 new-page: true
 
 = [+ name +]
@@ -143,7 +142,7 @@ title: Adjust window tax
 subtitle: Current rates: [+ taxes_houses_rate: tax_rates +]
 view-if: taxes_houses_active = true
 on-arrival: {! Q.tax_changed = "houses";
-Q.name = Q.taxes[Q.tax_changed].name.toUpperCase() !}
+Q.name = Q.taxes[Q.tax_changed].name !}
 new-page: true
 
 = [+ name +]
@@ -167,7 +166,7 @@ title: Adjust income tax
 subtitle: Current rates: [+ taxes_income_rate: tax_rates +]
 view-if: taxes_income_active = true
 on-arrival: {! Q.tax_changed = "income";
-Q.name = Q.taxes[Q.tax_changed].name.toUpperCase() !}
+Q.name = Q.taxes[Q.tax_changed].name !}
 new-page: true
 
 = [+ name +]
@@ -191,7 +190,7 @@ title: Adjust tax on goods
 subtitle: Current rates: [+ taxes_consum_rate: tax_rates +]
 view-if: taxes_consum_active = true
 on-arrival: {! Q.tax_changed = "consum";
-Q.name = Q.taxes[Q.tax_changed].name.toUpperCase() !}
+Q.name = Q.taxes[Q.tax_changed].name !}
 new-page: true
 
 = [+ name +]
@@ -283,7 +282,7 @@ subtitle: Current rates: [+ taxes_tollnovigrad_rate: tax_rates +]
 view-if: taxes_tollnovigrad_active = true 
 on-arrival: {!
 Q.tax_changed = "tollnovigrad"
-Q.name = Q.taxes[Q.tax_changed].name.toUpperCase() !}
+Q.name = Q.taxes[Q.tax_changed].name !}
 new-page: true
 
 [+ name +]
@@ -307,7 +306,7 @@ title: Adjust Novigrad toll
 subtitle: Current rates: [+ taxes_tolls_rate: tax_rates +]
 on-arrival: {!
 Q.tax_changed = "tolls"
-Q.name = Q.taxes[Q.tax_changed].name.toUpperCase() !}
+Q.name = Q.taxes[Q.tax_changed].name !}
 view-if: taxes_tolls_active = true
 new-page: true
 

@@ -1,8 +1,82 @@
+@1273_assembly_demand
+title: Estates request calling the Assembly
+new-page: true
+view-if: year = 1273 and season = 2
+max-visits: 1
+tags: event
+
+= Estates request calling the assembly
+
+Representatives of nobility, bourgeoisie and moderate clergy have appoached us with a motion regarding calling the Assembly of the Realm, a traditional convention of redanian estates. This institution historically has been used for all kinds of purposes, ranging from establishing new laws and taxes, gaining approval for starting wars to deciding matters of succession. It has no formally established procedure and is instead based on customary rules and historical precedents.
+
+The currently proposed Assembly would be meant to formally recognise count Dijkstra as Royal Regent and settle other issues regarding rebuilding from the war. They won't say it out loud, but they see it as an opportunity to put a price on their loyalty instead of giving it up for free. We can expect, that they will expect some privileges and promises before they agree to vote for Dijkstra's regency. That price may be worth paying, especially as it would allow us to turn estates against each other.
+
+- @assembly_set_date: We respect rights of the estates and will call the Assembly
+- @assembly_set_date_2: We don't need their approval, but Assembly may be useful anyway
+- @assembly_reject: The things won't be as they were anymore - we won't call the Assembly
+
+@assembly_set_date
+title: Set the date of the next Assembly of the Realm
+
+When should the Assembly gather? Calling it to meet this autumn is what the estates expect and would solve some issues right away. On the other hand we can delay it and call it to gather the next year, which would give us some time to prepare for this. This will annoy them, though.
+
+- @assembly_set_1273: The sooner, the better
+- @assembly_set_1274: It's better to wait
+
+@assembly_set_date_2
+go-to: assembly_set_date
+
+@assembly_set_1273
+title: Assembly will gather this year
+subtitle: Assembly will gather this year
+on-arrival: {! 
+Q.next_assembly_season = 3;
+Q.next_assembly_year = 1273;
+Q.assembly_called = 1;
+Q.estates.addSome(Q.assembly_participants, "sat", 6); 
+!}
+
+The Assembly of the Realm will gather in the [+ next_assembly_season : season +] of [+ next_assembly_year +] on the fields outside of Tretogor.
+
+The estates are happy that we agreed so easily.
+
+@assembly_set_1274
+title: Assembly will gather next year
+subtitle: Assembly will gather next year
+on-arrival: {! 
+Q.next_assembly_season = 1;
+Q.next_assembly_year = 1274;
+Q.assembly_called = 1;
+Q.estates.addSome(Q.assembly_participants, "sat", 3);
+!}
+
+The Assembly of the Realm will gather in the [+ next_assembly_season : season +] of [+ next_assembly_year +] on the fields outside of Tretogor.
+
+The estates are happy that we've agreed, but slightly annoyed by that delay.
+
+@assembly_reject
+title: Assembly won't be called
+on-arrival: {! Q.estates.addAll("sat",-6) !}
+
+The nobility and the Church still don't understand scope of our ambitions. The Redania will be reforged and we won't be asking them for permission.
+
+The estates are deeply worried that Dijkstra may have autocratic tendencies. We have to be careful, for if they are pushed too hard, they may simply rebel. 
+
+@1273_assembly
 title: Assembly on Matter of the Regency
 new-page: true
 view-if: year < 1275 and year = next_assembly_year and season = next_assembly_season
 max-visits: 1
 tags: event
+on-arrival: {!
+    Q.assembly_name = "Assembly on Matter of the Regency"
+    Q.first_gains = 0
+    Q.first_concessions = 0
+    Q.second_gains = 0
+    Q.second_concessions = 0
+    Q.third_gains = 0
+    Q.third_concessions = 0
+!}
 
 = Assembly on Matter of the Regency
 
@@ -15,3 +89,5 @@ The First Estate diet includes the most significant temples and monasteries of t
 The Second Estate diet consists of the nobility, both grand and small. Unlike in Temeria or Aedirn, where kings summon only members of oldest and most noble houses, in Redania nobles of every parish choose their envoy freely from themselves.
 
 The Third Estate is comprised of the representatives of the cities and bourgeoisie, who are usually chosen by the city councils. Radovid&nbsp;V did a lot to limit the influence of this diet and now only some of the largest and richest cities retain its delegates. This include places like Oxenfurt, Blaviken, Roggeven, Tridam, Rinde, Murivel or Egremont.
+
+- @assembly_main: Start the Assembly!
