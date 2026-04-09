@@ -68,6 +68,9 @@ Orders will be send to all offices of Civil Service to halt further hiring effor
 
 @cs_hiring_change
 title: Change hiring practices
+on-arrival: {!
+    Math.max(Q.cs_cooldown, 1) // cooldowns shouldn't go below 1
+!}
 
 - @cs_add_nobles: We should offer post to various nobles
 - @cs_remove_nobles: We shouldn't pretend noble birth makes someone good bureaucrat 

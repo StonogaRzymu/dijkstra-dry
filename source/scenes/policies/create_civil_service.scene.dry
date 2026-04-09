@@ -182,7 +182,9 @@ go-to: cs_create_finish
 @cs_create_finish
 title: Civil Service - created
 on-arrival: {!
+    Q.cs_created = 1
     Q.cs_expansion = 1
+    Math.max(Q.cs_cooldown, 1)
     Q.cs_upkeep = Q.cs_size * (2 + Q.cs_salaries);
     Q.cs_hire_gold = 2 * (2 + Q.cs_salaries);
     Q.budget_balance -= Q.cs_upkeep;
