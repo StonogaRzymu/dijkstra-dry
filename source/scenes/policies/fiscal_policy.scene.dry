@@ -1,44 +1,7 @@
 title: Fiscal policy
 new-page: true
 on-arrival: {!
-
-Q.budget_balance = 0
-
-Object.entries(Q.taxes).forEach((tax_obj) => {
-    let tax = tax_obj[1]
-    if (tax.active) {
-        let base = 0;
-        Object.entries(Q.provinces).forEach((prov_obj) => {
-            if (typeof prov_obj[1] !== 'function') {
-                let prov = prov_obj[1]
-                if (tax.metrics.includes("pop")){
-                    base += prov.pop * prov.control
-                }
-                if (tax.metrics.includes("land")){
-                    base += prov.land * prov.control
-                }
-                if (tax.metrics.includes("wealth")){
-                    base += prov.wealth * prov.control
-                }
-                if (tax.metrics.includes("trade")){
-                    base += prov.trade * prov.control
-                }
-                if (tax.metrics.includes("novigradtrade") && ("novigradtrade" in prov)){
-                    base += prov.novigradtrade * prov.control
-                }
-            }
-        })
-        base /= tax.metrics.length  
-        rev = Math.round(base * tax.base * tax.rate * tax.eff) / 100
-        
-        Q.taxes[tax_obj[0]].rev = rev
-
-        Q.budget_balance += rev
-    }
-});
-
-Q.budget_balance = Math.round(Q.budget_balance * 10) / 10;
-
+Q.evaluateBalance();
 !}
 
 = Fiscal policy
@@ -370,43 +333,7 @@ subtitle: + 20%
 on-arrival: {!
     Q.taxes[Q.tax_changed].rate += 0.2
     
-    Q.budget_balance = 0
-
-    Object.entries(Q.taxes).forEach((tax_obj) => {
-        let tax = tax_obj[1]
-        if (tax.active) {
-            let base = 0;
-            Object.entries(Q.provinces).forEach((prov_obj) => {
-                if (typeof prov_obj[1] !== 'function') {
-                    let prov = prov_obj[1]
-                    if (tax.metrics.includes("pop")){
-                        base += prov.pop * prov.control
-                    }
-                    if (tax.metrics.includes("land")){
-                        base += prov.land * prov.control
-                    }
-                    if (tax.metrics.includes("wealth")){
-                        base += prov.wealth * prov.control
-                    }
-                    if (tax.metrics.includes("trade")){
-                        base += prov.trade * prov.control
-                    }
-                    if (tax.metrics.includes("novigradtrade") && ("novigradtrade" in prov)){
-                        base += prov.novigradtrade * prov.control
-                    }
-                }
-            })
-            base /= tax.metrics.length  
-            rev = Math.round(base * tax.base * tax.rate * tax.eff) / 100
-
-            Q.taxes[tax_obj[0]].rev = rev
-
-            Q.budget_balance += rev
-
-        }
-    });
-
-    Q.budget_balance = Math.round(Q.budget_balance * 10) / 10;
+    Q.evaluateBalance();
 !}
 new-page: true
 go-to: tolls if tax_changed = "tolls" or tax_changed = "tollnovigrad"; change_taxes
@@ -419,43 +346,7 @@ subtitle: + 10%
 on-arrival: {!
     Q.taxes[Q.tax_changed].rate += 0.1
     
-    Q.budget_balance = 0
-
-    Object.entries(Q.taxes).forEach((tax_obj) => {
-        let tax = tax_obj[1]
-        if (tax.active) {
-            let base = 0;
-            Object.entries(Q.provinces).forEach((prov_obj) => {
-                if (typeof prov_obj[1] !== 'function') {
-                    let prov = prov_obj[1]
-                    if (tax.metrics.includes("pop")){
-                        base += prov.pop * prov.control
-                    }
-                    if (tax.metrics.includes("land")){
-                        base += prov.land * prov.control
-                    }
-                    if (tax.metrics.includes("wealth")){
-                        base += prov.wealth * prov.control
-                    }
-                    if (tax.metrics.includes("trade")){
-                        base += prov.trade * prov.control
-                    }
-                    if (tax.metrics.includes("novigradtrade") && ("novigradtrade" in prov)){
-                        base += prov.novigradtrade * prov.control
-                    }
-                }
-            })
-            base /= tax.metrics.length  
-            rev = Math.round(base * tax.base * tax.rate * tax.eff) / 100
-
-            Q.taxes[tax_obj[0]].rev = rev
-
-            Q.budget_balance += rev
-
-        }
-    });
-
-    Q.budget_balance = Math.round(Q.budget_balance * 10) / 10;
+    Q.evaluateBalance();
 !}
 new-page: true
 go-to: tolls if tax_changed = "tolls" or tax_changed = "tollnovigrad"; change_taxes
@@ -468,43 +359,7 @@ subtitle: – 20%
 on-arrival: {!
     Q.taxes[Q.tax_changed].rate -= 0.2
     
-    Q.budget_balance = 0
-
-    Object.entries(Q.taxes).forEach((tax_obj) => {
-        let tax = tax_obj[1]
-        if (tax.active) {
-            let base = 0;
-            Object.entries(Q.provinces).forEach((prov_obj) => {
-                if (typeof prov_obj[1] !== 'function') {
-                    let prov = prov_obj[1]
-                    if (tax.metrics.includes("pop")){
-                        base += prov.pop * prov.control
-                    }
-                    if (tax.metrics.includes("land")){
-                        base += prov.land * prov.control
-                    }
-                    if (tax.metrics.includes("wealth")){
-                        base += prov.wealth * prov.control
-                    }
-                    if (tax.metrics.includes("trade")){
-                        base += prov.trade * prov.control
-                    }
-                    if (tax.metrics.includes("novigradtrade") && ("novigradtrade" in prov)){
-                        base += prov.novigradtrade * prov.control
-                    }
-                }
-            })
-            base /= tax.metrics.length  
-            rev = Math.round(base * tax.base * tax.rate * tax.eff) / 100
-
-            Q.taxes[tax_obj[0]].rev = rev
-
-            Q.budget_balance += rev
-
-        }
-    });
-
-    Q.budget_balance = Math.round(Q.budget_balance * 10) / 10;
+    Q.evaluateBalance();
 !}
 new-page: true
 go-to: tolls if tax_changed = "tolls" or tax_changed = "tollnovigrad"; change_taxes
@@ -517,43 +372,7 @@ subtitle: – 10%
 on-arrival: {!
     Q.taxes[Q.tax_changed].rate -= 0.1
     
-    Q.budget_balance = 0
-
-    Object.entries(Q.taxes).forEach((tax_obj) => {
-        let tax = tax_obj[1]
-        if (tax.active) {
-            let base = 0;
-            Object.entries(Q.provinces).forEach((prov_obj) => {
-                if (typeof prov_obj[1] !== 'function') {
-                    let prov = prov_obj[1]
-                    if (tax.metrics.includes("pop")){
-                        base += prov.pop * prov.control
-                    }
-                    if (tax.metrics.includes("land")){
-                        base += prov.land * prov.control
-                    }
-                    if (tax.metrics.includes("wealth")){
-                        base += prov.wealth * prov.control
-                    }
-                    if (tax.metrics.includes("trade")){
-                        base += prov.trade * prov.control
-                    }
-                    if (tax.metrics.includes("novigradtrade") && ("novigradtrade" in prov)){
-                        base += prov.novigradtrade * prov.control
-                    }
-                }
-            })
-            base /= tax.metrics.length  
-            rev = Math.round(base * tax.base * tax.rate * tax.eff) / 100
-
-            Q.taxes[tax_obj[0]].rev = rev
-
-            Q.budget_balance += rev
-
-        }
-    });
-
-    Q.budget_balance = Math.round(Q.budget_balance * 10) / 10;
+    Q.evaluateBalance();
 !}
 new-page: true
 go-to: tolls if tax_changed = "tolls" or tax_changed = "tollnovigrad"; change_taxes

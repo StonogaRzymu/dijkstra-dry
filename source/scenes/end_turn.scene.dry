@@ -33,56 +33,62 @@ Q.admin = Q.admin_cap
             }
         })
 
-// evaluate income and financial reserves
+Q.evaluateBalance = function() {
+    
+    // evaluate income and financial reserves
 
-Q.budget_balance = 0
+    this.budget_balance = 0
 
-// tax efficiencies for "feudal" taxes are directly correlated with estate satisfaction
+    // tax efficiencies for "feudal" taxes are directly correlated with estate satisfaction
 
-Q.taxes["vassals"].eff = ( Q.estates.pettynobility.sat + Q.estates.aristocracy.sat ) / 2 / 75
-Q.taxes["cities"].eff = Q.estates.guilds.sat / 75
-Q.taxes["tithe"].eff = Q.estates.church.sat / 75
+    this.taxes["vassals"].eff = ( this.estates.pettynobility.sat + this.estates.aristocracy.sat ) / 2 / 75
+    this.taxes["cities"].eff = this.estates.guilds.sat / 75
+    this.taxes["tithe"].eff = this.estates.church.sat / 75
 
-// tax revenue
+    // tax revenue
 
-Object.entries(Q.taxes).forEach((tax_obj) => {
-    let tax = tax_obj[1]
-    if (tax.active) {
-        let base = 0;
-        Object.entries(Q.provinces).forEach((prov_obj) => {
-            if (typeof prov_obj[1] !== 'function') {
-                let prov = prov_obj[1]
-                if (tax.metrics.includes("pop")){
-                    base += prov.pop * prov.control
+    Object.entries(this.taxes).forEach((tax_obj) => {
+        let tax = tax_obj[1]
+        if (tax.active) {
+            let base = 0;
+            Object.entries(this.provinces).forEach((prov_obj) => {
+                if (typeof prov_obj[1] !== 'function') {
+                    let prov = prov_obj[1]
+                    if (tax.metrics.includes("pop")){
+                        base += prov.pop * prov.control
+                    }
+                    if (tax.metrics.includes("land")){
+                        base += prov.land * prov.control
+                    }
+                    if (tax.metrics.includes("wealth")){
+                        base += prov.wealth * prov.control
+                    }
+                    if (tax.metrics.includes("trade")){
+                        base += prov.trade * prov.control
+                    }
+                    if (tax.metrics.includes("novigradtrade") && ("novigradtrade" in prov)){
+                        base += prov.novigradtrade * prov.control
+                    }
                 }
-                if (tax.metrics.includes("land")){
-                    base += prov.land * prov.control
-                }
-                if (tax.metrics.includes("wealth")){
-                    base += prov.wealth * prov.control
-                }
-                if (tax.metrics.includes("trade")){
-                    base += prov.trade * prov.control
-                }
-                if (tax.metrics.includes("novigradtrade") && ("novigradtrade" in prov)){
-                    base += prov.novigradtrade * prov.control
-                }
-            }
-        })
-        base /= tax.metrics.length  
-        rev = Math.round(base * tax.base * tax.rate * tax.eff) / 100
-        
-        Q.taxes[tax_obj[0]].rev = rev
+            })
+            base /= tax.metrics.length  
+            rev = Math.round(base * tax.base * tax.rate * tax.eff) / 100
 
-        Q.budget_balance += rev
+            this.taxes[tax_obj[0]].rev = rev
 
-    }
-});
+            this.budget_balance += rev
 
-let upkeeps = Q.cs_upkeep + Q.mil.standing.fullupkeep + Q.mil.banners.fullupkeep + Q.mil.navy.fullupkeep
-console.log(Q.budget_balance + " - " + upkeeps)
+        }
+    });
 
-Q.budget_balance = Math.round(Q.budget_balance - upkeeps);
+    let upkeeps = this.cs_upkeep + this.mil.standing.fullupkeep + this.mil.banners.fullupkeep + this.mil.navy.fullupkeep
+    console.log(this.budget_balance + " - " + upkeeps)
+
+    this.budget_balance = Math.round(this.budget_balance - upkeeps)
+
+}
+
+Q.evaluateBalance();
 
 Q.budget += Q.budget_balance;
 
